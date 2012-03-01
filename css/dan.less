@@ -110,6 +110,17 @@ time {
   line-height: @base;
 }
 
+.butt {
+  display:block;
+  width:@base * 2;
+  height:@base * 2;
+  margin:0 0 (@base * 2);
+  span {
+    position: absolute;
+    left: -9999em;
+  }
+}
+
 @media print {
   * { 
     background: black !important;

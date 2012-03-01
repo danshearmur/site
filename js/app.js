@@ -1,8 +1,9 @@
 !function (document) {
 
-  var body, set_body_class;
+  var body, header, set_body_class;
 
   body = document.getElementsByTagName('body')[0];
+  header = document.getElementsByTagName('header')[0];
 
   // Set the class on the body, and update every 2.5 minutes
   set_body_class = !function () {
@@ -14,7 +15,7 @@
     time_class       = "t" + interval;
     transition_class = ' trans';
 
-    body.className += time_class;
+    body.className = time_class;
     if (body.className.indexOf(transition_class) != -1) {
       body.className += transition_class;
     } else {
@@ -23,12 +24,32 @@
       }, 1);
     }
 
-    setTimeout(arguments.callee, 2.5 * 60 * 1000);
+    return setTimeout(arguments.callee, 2.5 * 60 * 1000);
 
   } ();
 
+  function getColour() {
+    return window.getComputedStyle(header)['border-right-color'];
+  }
+
+  function Svg(pathStr, id, dark) {
+    var attrs, colour, paper;
+    colour = dark ? '#140C1A': getColour();
+    attrs = {
+      stroke: 'none',
+      fill: colour,
+      cursor: 'pointer'
+    };
+    paper = Raphael(id, pathStr).attr(attrs);
+    if (!dark) {
+      this.svgs = this.svgs || [];
+      this.svgs.push(paper);
+    }
+    return paper;
+  }
+
   // SVG
-  var logo, attrs, hover_attrs;
+  var logo, attrs, hover_attrs, github, background, butts, glow;
 
   attrs = {
     stroke: "none",

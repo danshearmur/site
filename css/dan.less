@@ -43,10 +43,10 @@ p {
   // Apply the styles
   background: @primary;
   a, a:visited {
-    color:spin(@darker, 120);
+    color:spin(@darker, 180);
   }
   a:hover {
-    color:spin(@darker, -120);
+    color:darken(spin(@darker, 180), 15%);
   }
   header {
     border-right: 1px solid hsl(@deg, 100%, 42%);

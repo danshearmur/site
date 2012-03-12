@@ -46,8 +46,9 @@
       p.del-notes= item.n
       ul.del-tags
         each tag in item.t
-          li
-            a( href="http://delicious.com/danshearmur/#{tag}", target="_blank" )= tag
+          if tag != ""
+            li
+              a( href="http://delicious.com/danshearmur/#{tag}", target="_blank" )= tag
       time.del-time= item.dt
     </script>
     <script id=layout-twitter type=tmpl>

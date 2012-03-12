@@ -21,11 +21,26 @@
           box-shadow: @shadow;
 }
 
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 // Fonts
 @copy: "Helvetica Neue", Helvetica, Arial, sans-serif;
 @headings: "Droid Sans", @copy;
-@base: 18px;
+@basePx: 18px;
 @fontColour: #140C1A;
+
+// full width 60 @ 1080px
+@basePc: (18 / 1080) * 100%;
 
 body {
   font-family: @copy;
@@ -34,14 +49,18 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: @headings;
-  margin: (@base * 2) 0 (@base / 2);
+  margin: (@basePx * 2) 0 (@basePx / 2);
   &+p {
     text-indent:0
   }
 }
 
+h4, h5, h6 {
+  line-height: @basePx;
+}
+
 p {
-  text-indent: @base;
+  text-indent: @basePx;
 }
 
 // Mixin to create the colour classes
@@ -49,20 +68,27 @@ p {
 
   // Set up some colours
   @deg: @input * 15;
-  @primary: hsl(@deg, 100%, 88%);
+  @primary: hsl(@deg, 100%, 92%);
   @darker: hsl(@deg, 100%, 42%);
+  @secondary: spin(@darker, 120);
 
   // Apply the styles
   background: @primary;
   a, a:visited {
-    color:spin(@darker, 0);
+    color:darken(@secondary, 15%);
   }
   a:hover {
-    color:darken(spin(@darker, 0), 15%);
+    color:darken(@secondary, 25%);
   }
   header {
-    border-right: 1px solid hsl(@deg, 100%, 42%);
+    border-right: 1px solid @darker;
   }
+  .panel {
+    &:after {
+      background: @darker;
+    }
+  }
+
 }
 
 .t0 { .colour(0) }
@@ -98,31 +124,37 @@ p {
 
 header {
   position:     fixed;
-  top:          @base * 2;
-  left:         @base * 2;
-  bottom:       @base * 2;
-  width:        @base * 2;
-  padding-right: @base * 2;
+  top:          @basePx * 2;
+  left:         @basePx * 2;
+  bottom:       @basePx * 2;
+  width:        @basePx * 2;
+  padding-right: @basePx * 2;
 }
 
-[role=main] {
-  width:   @base * 32;
-  margin:  0 0 0 (@base * 6);
-  padding: (@base * 2) (@base * 4);
+#wrapper {
+  .clearfix();
+  max-width: 60 * @basePx;
+  margin:  0 0 0 (@basePx * 6);
+}
+
+article {
+  width: @basePc * 30;
+  padding: (@basePx * 2) (@basePc * 4);
+  float: left;
 }
 
 time {
   font-size: 10px;
   color: #999;
-  line-height: @base;
+  line-height: @basePx;
 }
 
 .butt {
 
   display:block;
-  width:@base * 2;
-  height:@base * 2;
-  margin:0 0 (@base * 2);
+  width:@basePx * 2;
+  height:@basePx * 2;
+  margin:0 0 (@basePx * 2);
   .border-radius();
 
   span {
@@ -145,6 +177,33 @@ time {
     position: relative;
     top: 2px;
     .box-shadow(0 0 2px 0 #999);
+  }
+
+}
+
+aside {
+  .clearfix();
+  width: 22 * @basePc;
+  float: left;
+  margin: (2 * @basePx) 0;
+}
+
+.panel {
+
+  @basePc: (18 / 396) * 100%;
+  width: @basePc * 9;
+  padding: 0 @basePc;
+  float: left;
+  font-size: 13px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
   }
 
 }

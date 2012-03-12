@@ -76,12 +76,11 @@
   }
 
   function render() {
-    var args, d, locals, html;
-    args = arguments[1][0];
-    d = [].slice.call(args, 1, args.length);
+    var locals, html;
     locals = {
-      data: d
+      data: arguments[1][0]
     };
+    console.log(arguments[1][0])
     html = tmpls[arguments[0]](locals);
     appendHtml(aside, html);
   }
@@ -116,7 +115,6 @@
       cursor: 'pointer'
     };
     paper = Raphael(id, 36, 36);
-    //debugger;
     paper.path(pathStr).attr(attrs);
     if (!dark) {
       svgs.push(paper);

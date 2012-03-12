@@ -1,10 +1,11 @@
-<!docytype html>
+<!doctype html>
 <html>
   <head>
     <meta charset=utf-8>
     <title>djs</title>
     <link rel=stylesheet/less href=css/dan.less>
     <link href=http://fonts.googleapis.com/css?family=Droid+Sans:700 rel=stylesheet>
+    <script>els='header article time aside'.split(' ');for(i=0;i<els.length;i++){document.createElement(els[i])}</script>
     <script src=js/less-1.2.2.min.js></script>
   </head>
   <body>
@@ -34,36 +35,32 @@
         <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Aenean a libero eu magna lacinia hendrerit. Phasellus ac orci leo, eget egestas odio. Integer interdum mauris vel lectus dignissim vel sollicitudin ante molestie. Etiam condimentum lorem quis leo viverra porttitor. Sed tristique neque at diam lobortis ultrices. Quisque purus diam, imperdiet ac vulputate in, consequat et elit. </p>
         <p>Aliquam nunc arcu, suscipit at pretium nec, viverra quis urna. Phasellus vitae hendrerit odio. Maecenas mauris neque, varius sit amet rhoncus eget, tempor a libero. </p>
       </article>
-      <aside>
-        <div class="panel">
-          <div class="row del">
-            <a class=row-link href="xyz">sometitle</a>
-            <p class=del-notes>some text</p>
-            <ul class=del-tags>
-              <li><a href="" class=del-tag>!read</a></li>
-              <li><a href="" class=del-tag>!read</a></li>
-            </ul>
-            <time class=del-time></time>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="row tw">
-            <a class=row-link href="xyz">sometitle</a>
-            <p class=del-notes>some text</p>
-            <ul class=del-tags>
-              <li><a href="" class=del-tag>!read</a></li>
-              <li><a href="" class=del-tag>!read</a></li>
-            </ul>
-            <time class=del-time></time>
-          </div>
-        </div>
-      </aside>
-      <article>
-      abc
-      </article>
-      <aside>xyz</aside>
+      <aside></aside>
     </div>
+    <script id=layout-delicious type=tmpl>
+#delicious.panel
+  h2 delicious
+  each item in data
+    .row.del
+      a.row-link( href=item.u, target="_blank" )= item.d
+      p.del-notes= item.n
+      ul.del-tags
+        each tag in item.t
+          li
+            a( href="http://delicious.com/danshearmur/#{tag}", target="_blank" )= tag
+      time.del-time= item.dt
+    </script>
+    <script id=layout-twitter type=tmpl>
+#twitter.panel
+  h2 twitter
+  each item in data
+    .row.tw
+      p.tweet!= twttr.txt.autoLink(item.text)
+      time.tw-time= item.created_at
+    </script>
     <script src=js/raphael-min.js></script>
+    <script src=js/twitter-text.js></script>
+    <script src=js/jade.js></script>
     <script src=js/app.js></script>
   </body>
 </html>

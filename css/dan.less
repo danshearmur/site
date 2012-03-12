@@ -87,8 +87,13 @@ p {
     &:after {
       background: @darker;
     }
+    h2 {
+      border-color: lighten(@darker, 40%);
+    }
   }
-
+  .row {
+    border-color: lighten(@darker, 40%);
+  }
 }
 
 .t0 { .colour(0) }
@@ -138,7 +143,7 @@ header {
 }
 
 article {
-  width: @basePc * 30;
+  width: @basePc * 28;
   padding: (@basePx * 2) (@basePc * 4);
   float: left;
 }
@@ -183,16 +188,17 @@ time {
 
 aside {
   .clearfix();
-  width: 22 * @basePc;
+  width: 24 * @basePc;
   float: left;
   margin: (2 * @basePx) 0;
 }
 
 .panel {
 
-  @basePc: (18 / 396) * 100%;
-  width: @basePc * 9;
-  padding: 0 @basePc;
+  // reset the basePc from parent container size
+  @basePc: (18 / 432) * 100%;
+  width: @basePc * 10;
+  padding: @basePx @basePc;
   float: left;
   font-size: 13px;
   position: relative;
@@ -204,6 +210,67 @@ aside {
     left: 0;
     bottom: 0;
     width: 1px;
+  }
+
+  h2 {
+    margin: (2.5 * @basePx) 0 0;
+    padding-bottom: @basePx;
+    border-bottom: 1px solid;
+  }
+
+  p {
+    text-indent: 0;
+  }
+
+  }
+
+.row {
+  padding: (@basePx - 1) 0;
+  border-bottom: 1px solid;
+
+  p {
+    margin: 0;
+  }
+
+}
+
+.del-row .del-notes {
+  margin: (@basePx / 2) 0;
+}
+
+.del-tags {
+
+  list-style: none;
+  margin: (@basePx / 2) 0;
+  padding: 0;
+  .clearfix();
+
+  li {
+    float: left;
+  }
+
+  a {
+    @h: 12px;
+    @b: 10px;
+    @color: rgba(0, 0, 0, .2);
+
+    font-size: 11px;
+    height: @h;
+    display: inline-block;
+    padding: 4px @b 4px 4px;
+    margin: 0 9px 0 @b;
+    background: @color;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -@b;
+      border-top: @b solid transparent;
+      border-bottom: @b solid transparent;
+      border-right: @b solid @color;
+    }
   }
 
 }

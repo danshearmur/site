@@ -68,7 +68,7 @@ p {
 
   // Set up some colours
   @deg: @input * 15;
-  @primary: hsl(@deg, 100%, 92%);
+  @primary: hsl(@deg, 100%, 94%);
   @darker: hsl(@deg, 100%, 42%);
   @secondary: spin(@darker, 120);
 
@@ -234,7 +234,7 @@ aside {
 
 }
 
-.del-row .del-notes {
+.row .del-notes {
   margin: (@basePx / 2) 0;
 }
 
@@ -252,7 +252,7 @@ aside {
   a {
     @h: 12px;
     @b: 10px;
-    @color: rgba(0, 0, 0, .2);
+    @color: rgba(0, 0, 0, .1);
 
     font-size: 11px;
     height: @h;
@@ -271,6 +271,10 @@ aside {
       border-bottom: @b solid transparent;
       border-right: @b solid @color;
     }
+  }
+
+  &:empty {
+    margin: 0;
   }
 
 }

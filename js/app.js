@@ -1,6 +1,6 @@
 (function () {
 
-  var body, header, svgs, tmpls, aside;
+  var body, header, aside, svgs, jid;
 
   function getFirst(el) {
     return document.getElementsByTagName(el)[0];
@@ -37,6 +37,8 @@
 
   }) ();
 
+  jid = 0;
+
   function getJsonp(url, callback, jsonp) {
 
     var jsonp, tag, full_url, callback_name, ref;
@@ -47,12 +49,12 @@
     jsonp = jsonp || 'callback';
 
     tag = document.createElement('script');
-    callback_name = 'j_' + parseInt(new Date().getTime());
+    callback_name = 'j_' + (jid++);
 
     window[callback_name] = function () {
       callback(arguments);
-      //delete window.callback_name;
-      //tag.parentNode.removeChild(tag);
+      delete window[callback_name];
+      tag.parentNode.removeChild(tag);
     }
 
     tag.src = url +
@@ -66,10 +68,6 @@
     return true;
   }
 
-  function compileTempl(elId) {
-    return jade.compile(document.getElementById(elId).innerHTML);
-  }
-
   function appendHtml(el, html) {
     var curr = el.innerHTML
     el.innerHTML = curr + html;
@@ -80,15 +78,9 @@
     locals = {
       data: arguments[1][0]
     };
-    console.log(arguments[1][0])
-    html = tmpls[arguments[0]](locals);
+    html = Templating.tpl(arguments[0] + '.jade', locals);
     appendHtml(aside, html);
   }
-
-  tmpls = {
-    delicious: compileTempl('layout-delicious'),
-    twitter: compileTempl('layout-twitter')
-  };
 
   getJsonp('//feeds.delicious.com/v2/json/danshearmur?count=5', function () {
     render('delicious', arguments[0]);

@@ -37,28 +37,6 @@
       </article>
       <aside></aside>
     </div>
-    <script id=layout-delicious type=tmpl>
-#delicious.panel
-  h2 delicious
-  each item in data
-    .row.del
-      a.row-link( href=item.u, target="_blank" )= item.d
-      p.del-notes= item.n
-      ul.del-tags
-        each tag in item.t
-          if tag != ""
-            li
-              a( href="http://delicious.com/danshearmur/#{tag}", target="_blank" )= tag
-      time.del-time= item.dt
-    </script>
-    <script id=layout-twitter type=tmpl>
-#twitter.panel
-  h2 twitter
-  each item in data
-    .row.tw
-      p.tweet!= twttr.txt.autoLink(item.text)
-      time.tw-time= item.created_at
-    </script>
     <script src=js/raphael-min.js></script>
     <script src=js/twitter-text.js></script>
     <script src=js/jade.js></script>

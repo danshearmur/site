@@ -1,6 +1,6 @@
 (function () {
 
-  var body, header, aside, svgs, jid;
+  var body, header, svgs;
 
   function getFirst(el) {
     return document.getElementsByTagName(el)[0];
@@ -8,7 +8,6 @@
 
   body   = getFirst('body');
   header = getFirst('header');
-  aside  = getFirst('aside');
 
   svgs = [];
 
@@ -36,59 +35,6 @@
     setTimeout(arguments.callee, 2.5 * 60 * 1000);
 
   }) ();
-
-  jid = 0;
-
-  function getJsonp(url, callback, jsonp) {
-
-    var jsonp, tag, full_url, callback_name, ref;
-
-    if (typeof callback != 'function') {
-      return false;
-    }
-    jsonp = jsonp || 'callback';
-
-    tag = document.createElement('script');
-    callback_name = 'j_' + (jid++);
-
-    window[callback_name] = function () {
-      callback(arguments);
-      delete window[callback_name];
-      tag.parentNode.removeChild(tag);
-    }
-
-    tag.src = url +
-      (url.indexOf('?') != -1 ? '&' : '?') +
-      jsonp + '=' + callback_name;
-    tag.id = callback_name;
-
-    ref = document.getElementsByTagName('script')[0];
-    ref.parentNode.insertBefore(tag, ref);
-
-    return true;
-  }
-
-  function appendHtml(el, html) {
-    var curr = el.innerHTML
-    el.innerHTML = curr + html;
-  }
-
-  function render() {
-    var locals, html;
-    locals = {
-      data: arguments[1][0]
-    };
-    html = Templating.tpl(arguments[0] + '.jade', locals);
-    appendHtml(aside, html);
-  }
-
-  getJsonp('//feeds.delicious.com/v2/json/danshearmur?count=5', function () {
-    render('delicious', arguments[0]);
-  });
-
-  getJsonp('//api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=danshearmur&count=5', function () {
-    render('twitter', arguments[0]);
-  });
 
   function getColour() {
     var output;

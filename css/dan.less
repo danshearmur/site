@@ -95,6 +95,9 @@ p {
   .row {
     border-color: lighten(@darker, 40%);
   }
+  .del-tags li a:after {
+    background: @primary;
+  }
 }
 
 .t0 { .colour(0) }
@@ -262,6 +265,7 @@ aside {
     margin: 0 9px 0 @b;
     background: @color;
     position: relative;
+    .border-radius(0 3px 3px 0);
 
     &:before {
       content: "";
@@ -271,6 +275,17 @@ aside {
       border-top: @b solid transparent;
       border-bottom: @b solid transparent;
       border-right: @b solid @color;
+    }
+
+    &:after {
+      content: "";
+      position:absolute;
+      top:7.5px;
+      left:-@b/2;
+      background:pink;
+      height:@b/2;
+      width:@b/2;
+      .border-radius(10px);
     }
   }
 

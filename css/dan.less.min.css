@@ -50,7 +50,7 @@ table{border-collapse:collapse;border-spacing:0;}
 .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
 .clearfix:after{clear:both;}
 body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#140c1a;}
-h1,h2,h3,h4,h5,h6{font-family:"Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;margin:36px 0 9px;}h1+p,h2+p,h3+p,h4+p,h5+p,h6+p{text-indent:0;}
+h1,h2,h3,h4,h5,h6{font-family:"Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;line-height:36px;margin:36px 0 9px;}h1+p,h2+p,h3+p,h4+p,h5+p,h6+p{text-indent:0;}
 h4,h5,h6{line-height:18px;}
 p{text-indent:18px;}
 .t0{background:#ffe0e0;}.t0 a,.t0 a:visited{color:#008a00;}

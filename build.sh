@@ -8,7 +8,7 @@ CSS_FOLDER="css/"
 CSS_FILE="dan.less"
 rm $JS_FOLDER$BASE $JS_FOLDER$DESKTOP
 tplcpl -t $TMPL_FOLDER -o $JS_FOLDER${TMPL}.js
-SCRIPTS="raphael-min app"
+SCRIPTS="raphael-min modernizr.min app"
 DESKTOP_SCRIPTS="twitter-text moment ${TMPL} extra"
 for script in $SCRIPTS; do
   uglifyjs $JS_FOLDER$script.js >> $JS_FOLDER$BASE

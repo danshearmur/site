@@ -1,5 +1,10 @@
 (function () {
 
+  Modernizr.load({
+    test: Modernizr.mq('only screen and (min-width: 768px)') && window.location.pathname == "/",
+    yep: '/js/desktop.js'
+  })
+
   var body, header, svgs;
 
   function getFirst(el) {
@@ -37,7 +42,6 @@
   }) ();
 
   function getColour() {
-    var output;
     if (header.currentStyle) {
       return header.currentStyle['borderRightColor'];
     }

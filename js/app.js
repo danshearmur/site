@@ -2,11 +2,10 @@
 
   window._gaq = _gaq=[['_setAccount','UA-21690040-1'],['_trackPageview'],['_trackPageLoadTime'],['_setSiteSpeedSampleRate',10]];
   window.disqus_shortname = 'danshearmursblog';
-  window.disqus_developer = 1;
 
   Modernizr.load(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
   Modernizr.load([{
-    test: Modernizr.mq('only screen and (min-width: 768px)') && window.location.pathname == '/',
+    test: Modernizr.mq('only screen and (min-width: 900px)') && window.location.pathname == '/',
     yep: '/js/desktop.js'
   },{
     test: window.location.pathname == '/',

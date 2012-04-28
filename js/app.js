@@ -59,8 +59,6 @@
       }, 1);
     }
 
-    updateColours();
-
     setTimeout(arguments.callee, 2.5 * 60 * 1000);
 
   }) ();

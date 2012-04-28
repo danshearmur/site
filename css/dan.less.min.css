@@ -255,10 +255,14 @@ time{font-size:10px;color:#999;line-height:18px;}
 .butt{display:block;width:36px;height:36px;margin:0 0 36px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;background-repeat:no-repeat;background-position:center center;}.butt span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
 .butt:hover{-webkit-box-shadow:0 0 10px 0 #999999;-moz-box-shadow:0 0 10px 0 #999999;box-shadow:0 0 10px 0 #999999;}
 .butt:active{position:relative;top:2px;-webkit-box-shadow:0 0 2px 0 #999999;-moz-box-shadow:0 0 2px 0 #999999;box-shadow:0 0 2px 0 #999999;}
-#djs{background-color:#000;background-image:url(../img/logo.png);background-image:none,url(../img/logo.svg),url(../img/logo.png);}
-#delicious{background-image:url(../img/delicious.png);background-image:none,url(../img/delicious.svg),url(../img/delicious.png);}
-#twitter{background-image:url(../img/twitter.png);background-image:none,url(../img/twitter.svg),url(../img/twitter.png);}
-#github{background-image:url(../img/github.png);background-image:none,url(../img/github.svg),url(../img/github.png);}
+#djs{background-color:#000;background-image:url(../img/logo.svg);}
+#delicious{background-image:url(../img/delicious.svg);}
+#twitter{background-image:url(../img/twitter.svg);}
+#github{background-image:url(../img/github.svg);}
+.no-svg #djs{background-image:url(../img/delicious.png);}
+.no-svg #delicious{background-image:url(../img/delicious.png);}
+.no-svg #twitter{background-image:url(../img/twitter.png);}
+.no-svg #github{background-image:url(../img/github.png);}
 aside{*zoom:1;width:40%;float:left;margin:36px 0;}aside:before,aside:after{display:table;content:"";}
 aside:after{clear:both;}
 .panel{width:41.66666666666666%;padding:18px 4.166666666666666%;float:left;font-size:13px;position:relative;}.panel:after{content:"";position:absolute;top:0;left:0;bottom:0;width:1px;}

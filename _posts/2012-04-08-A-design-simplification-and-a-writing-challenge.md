@@ -23,10 +23,6 @@ Keeping the javascript on this site as small as possible was an important goal o
 
 I have kept the layout pretty simple, and have only introduced small enhancements to the larger screen sizes. The header starts small and horizontal, saving screen space and drawing attention to the content. But then changes to the more distinctive and sticky vertical style on tablet and desktop screens. The comments follow the article on mobile, but on larger screens sit on the left hand side.
 
-<div id="gid-1993718" class="gist-insert">
-  <a href="https://gist.github.com/1993718" target="_blank">https://gist.github.com/1993718</a>
-</div>
-
 ## A fresh start
 
 Over the last year or so, I feel my writing has improved quite a bit. Looking back at the last iteration of this site, I felt quite embarrased looking at the old content. For better or worse I have taken a gamble and scrapped the posts and all of the portfolio. Some day I may put the examples of work back, but in their current state they feel quite dated.

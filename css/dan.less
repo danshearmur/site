@@ -132,11 +132,11 @@ p {
 }
 
 header {
-  position:     fixed;
-  top:          @basePx * 2;
-  left:         @basePx * 2;
-  bottom:       @basePx * 2;
-  width:        @basePx * 2;
+  position:      fixed;
+  top:           @basePx * 2;
+  left:          @basePx * 2;
+  bottom:        @basePx * 2;
+  width:         @basePx * 2;
   padding-right: @basePx * 2;
 }
 
@@ -144,6 +144,9 @@ header {
   .clearfix();
   max-width: 60 * @basePx;
   margin:  0 0 0 (@basePx * 6);
+  &>article {
+    clear: left;
+  }
 }
 
 article {
@@ -300,3 +303,5 @@ aside {
     display: none !important;
   }
 }
+
+@import 'gists';

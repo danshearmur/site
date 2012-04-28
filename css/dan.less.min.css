@@ -265,13 +265,10 @@ time{font-size:10px;color:#999;line-height:18px;}
 .no-svg #github{background-image:url(../img/github.png);}
 aside{*zoom:1;width:40%;float:left;margin:36px 0;}aside:before,aside:after{display:table;content:"";}
 aside:after{clear:both;}
-.panel{width:41.66666666666666%;padding:18px 4.166666666666666%;float:left;font-size:13px;position:relative;}.panel:after{content:"";position:absolute;top:0;left:0;bottom:0;width:1px;}
-.panel h2{margin:45px 0 0;padding-bottom:18px;border-bottom:1px solid;}
-.panel p{text-indent:0;}
+.panel,#disqus_thread{width:41.66666666666666%;padding:18px 4.166666666666666%;float:left;font-size:13px;position:relative;}.panel:after,#disqus_thread:after{content:"";position:absolute;top:0;left:0;bottom:0;width:1px;}
+.panel h2,#disqus_thread h2{margin:45px 0 0;padding-bottom:18px;border-bottom:1px solid;}
+.panel p,#disqus_thread p{text-indent:0;}
 .row{padding:17px 0;border-bottom:1px solid;}.row p{margin:0;}
-#disqus_thread{width:41.66666666666666%;padding:18px 4.166666666666666%;float:left;font-size:13px;position:relative;}#disqus_thread:after{content:"";position:absolute;top:0;left:0;bottom:0;width:1px;}
-#disqus_thread h2{margin:45px 0 0;padding-bottom:18px;border-bottom:1px solid;}
-#disqus_thread p{text-indent:0;}
 .row .del-notes{margin:9px 0;}
 .del-tags{list-style:none;margin:9px 0;padding:0;*zoom:1;}.del-tags:before,.del-tags:after{display:table;content:"";}
 .del-tags:after{clear:both;}

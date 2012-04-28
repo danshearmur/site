@@ -1,0 +1,31 @@
+article, .pagination {
+  width: @basePc * 28;
+  padding: (@basePx * 2) (@basePc * 4);
+  float: left;
+}
+
+aside {
+  width: 24 * @basePc;
+  float: left;
+  margin: (2 * @basePx) 0;
+  padding: 0;
+}
+
+#disqus_thread {
+
+  @basePc: (18 / 432) * 100%;
+  padding: (2 * @basePx) (2 * @basePc) @basePx;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+  }
+
+}
+
+

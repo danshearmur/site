@@ -82,7 +82,9 @@ p {
     color:darken(@secondary, 25%);
   }
   header {
-    border-right: 1px solid @darker;
+    border-color: @darker;
+    border-style: solid;
+    border-width: 0 0 1px 0;
   }
   .panel {
     &:after {
@@ -140,27 +142,19 @@ p {
 }
 
 header {
-  position:      fixed;
-  top:           @basePx * 2;
-  left:          @basePx * 2;
-  bottom:        @basePx * 2;
-  width:         @basePx * 2;
-  padding-right: @basePx * 2;
+  .clearfix();
+  margin:(@basePx * 2) (@basePx * 2) 0 (@basePx * 2);
 }
 
 #wrapper {
   .clearfix();
-  max-width: 60 * @basePx;
-  margin:  0 0 0 (@basePx * 6);
   &>article {
     clear: left;
   }
 }
 
 article {
-  width: @basePc * 28;
-  padding: (@basePx * 2) (@basePc * 4);
-  float: left;
+  padding: @basePx * 2;
 }
 
 time {
@@ -171,10 +165,10 @@ time {
 
 .butt {
 
-  display:block;
+  display:inline-block;
   width:@basePx * 2;
   height:@basePx * 2;
-  margin:0 0 (@basePx * 2);
+  margin:0 (@basePx * 2) (@basePx * 2) 0;
   .border-radius();
   background-repeat:   no-repeat;
   background-position: center center;
@@ -236,9 +230,7 @@ time {
 
 aside {
   .clearfix();
-  width: 24 * @basePc;
-  float: left;
-  margin: (2 * @basePx) 0;
+  padding: @basePx * 2;
 }
 
 .panel {
@@ -339,21 +331,12 @@ aside {
 
 }
 
-#disqus_thread {
+@media only screen and (min-width: 540px) {
+  @import 'middle';
+}
 
-  @basePc: (18 / 432) * 100%;
-  padding: (2 * @basePx) (2 * @basePc) @basePx;
-  position: relative;
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 1px;
-  }
-
+@media only screen and (min-width: 900px) {
+  @import 'full';
 }
 
 @media print {

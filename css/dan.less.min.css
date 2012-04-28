@@ -277,7 +277,7 @@ header:after{clear:both;}
 #wrapper>article{clear:left;}
 article{padding:36px;}
 time{font-size:10px;color:#999;line-height:18px;}
-.butt{display:inline-block;width:36px;height:36px;margin:0 36px 36px 0;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;background-repeat:no-repeat;background-position:center center;}.butt span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
+.butt{display:inline-block;width:36px;height:36px;margin:0 18px 36px 0;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;background-repeat:no-repeat;background-position:center center;}.butt span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
 .butt:hover{-webkit-box-shadow:0 0 10px 0 #999999;-moz-box-shadow:0 0 10px 0 #999999;box-shadow:0 0 10px 0 #999999;}
 .butt:active{position:relative;top:2px;-webkit-box-shadow:0 0 2px 0 #999999;-moz-box-shadow:0 0 2px 0 #999999;box-shadow:0 0 2px 0 #999999;}
 #djs{background-color:#000;background-image:url(../img/logo.svg);}

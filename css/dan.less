@@ -98,6 +98,9 @@ p {
   .del-tags li a:after {
     background: @primary;
   }
+  .butt {
+    background-color: @darker;
+  }
 }
 
 .t0 { .colour(0) }
@@ -168,6 +171,8 @@ time {
   height:@basePx * 2;
   margin:0 0 (@basePx * 2);
   .border-radius();
+  background-repeat:   no-repeat;
+  background-position: center center;
 
   span {
     border: 0;
@@ -181,7 +186,6 @@ time {
   }
 
   &:hover {
-    background: #fff;
     .box-shadow(0 0 10px 0 #999);
   }
 
@@ -191,6 +195,27 @@ time {
     .box-shadow(0 0 2px 0 #999);
   }
 
+}
+
+#djs {
+  background-color:    #000;
+  background-image:    url(../img/logo.png);
+  background-image:    none, url(../img/logo.svg), url(../img/logo.png);
+}
+
+#delicious {
+  background-image:    url(../img/delicious.png);
+  background-image:    none, url(../img/delicious.svg), url(../img/delicious.png);
+}
+
+#twitter {
+  background-image:    url(../img/twitter.png);
+  background-image:    none, url(../img/twitter.svg), url(../img/twitter.png);
+}
+
+#github {
+  background-image:    url(../img/github.png);
+  background-image:    none, url(../img/github.svg), url(../img/github.png);
 }
 
 aside {

@@ -129,7 +129,7 @@ var buf = [];
 with (locals || {}) {
 var interp;
 buf.push('<div');
-buf.push(attrs({ 'id':('delicious'), "class": ('panel') }));
+buf.push(attrs({ 'id':('delicious-panel'), "class": ('panel') }));
 buf.push('><h2>delicious</h2>');
 // iterate data
 (function(){
@@ -273,7 +273,7 @@ var buf = [];
 with (locals || {}) {
 var interp;
 buf.push('<div');
-buf.push(attrs({ 'id':('twitter'), "class": ('panel') }));
+buf.push(attrs({ 'id':('twitter-panel'), "class": ('panel') }));
 buf.push('><h2>twitter</h2>');
 // iterate data
 (function(){

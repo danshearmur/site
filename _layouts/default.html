@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>{{ page.title }} - djs</title>
+    <meta name=viewport content="initial-scale=1, maximum-scale=1">
+    <link rel=stylesheet href=/css/dan.less.min.css>
+    <link href=http://fonts.googleapis.com/css?family=Droid+Sans:700 rel=stylesheet>
+    <script>var i=0,els='header article time aside'.split(' ');for(;i<els.length;i++){document.createElement(els[i])}</script>
+  </head>
+  <body>
+    <header>
+      <a href=/ id=djs class=butt>
+        <span>djs</span>
+      </a>
+      <a href=https://delicious.com id=delicious class=butt target=_blank>
+        <span>Delicious</span>
+      </a>
+      <a href=https://twitter.com/danshearmur id=twitter class=butt target=_blank>
+        <span>Twiiter</span>
+      </a>
+      <a href=https://github.com/danshearmur id=github class=butt target=_blank>
+        <span>GitHub</span>
+      </a>
+    </header>
+    <div id=wrapper>
+      <section>
+        {{ content }}
+      </section>
+      <aside></aside>
+    </div>
+    <script src=/js/base.js></script>
+  </body>
+</html>

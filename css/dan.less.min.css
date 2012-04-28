@@ -300,7 +300,7 @@ aside:after{clear:both;}
 .del-tags a{font-size:11px;height:12px;display:inline-block;padding:4px 10px 4px 4px;margin:0 9px 0 10px;background:rgba(0, 0, 0, 0.1);position:relative;-webkit-border-radius:0 3px 3px 0;-moz-border-radius:0 3px 3px 0;border-radius:0 3px 3px 0;}.del-tags a:before{content:"";position:absolute;top:0;left:-10px;border-top:10px solid transparent;border-bottom:10px solid transparent;border-right:10px solid rgba(0, 0, 0, 0.1);}
 .del-tags a:after{content:"";position:absolute;top:7.5px;left:-5px;background:pink;height:5px;width:5px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;}
 .del-tags:empty{margin:0;}
-#disqus_thread{padding:18px 4.166666666666666%;position:relative;}#disqus_thread:after{content:"";position:absolute;top:0;left:0;bottom:0;width:1px;}
+#disqus_thread{padding:36px 4.166666666666666% 18px;position:relative;}#disqus_thread:after{content:"";position:absolute;top:0;left:0;bottom:0;width:1px;}
 @media print{*{display:none !important;}}.gist{color:#000;}
 .gist div{padding:0;margin:0;}
 .gist .gist-file{border:1px solid #dedede;font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;margin-bottom:1em;}

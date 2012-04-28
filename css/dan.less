@@ -84,7 +84,7 @@ p {
   header {
     border-right: 1px solid @darker;
   }
-  .panel, #disqus_thread {
+  .panel {
     &:after {
       background: @darker;
     }
@@ -100,6 +100,11 @@ p {
   }
   .butt {
     background-color: @darker;
+  }
+  #disqus_thread {
+    &:after {
+      background: @darker;
+    }
   }
 }
 
@@ -236,7 +241,7 @@ aside {
   margin: (2 * @basePx) 0;
 }
 
-.panel, #disqus_thread {
+.panel {
 
   // reset the basePc from parent container size
   @basePc: (18 / 432) * 100%;
@@ -265,7 +270,7 @@ aside {
     text-indent: 0;
   }
 
-  }
+}
 
 .row {
   padding: (@basePx - 1) 0;
@@ -330,6 +335,23 @@ aside {
 
   &:empty {
     margin: 0;
+  }
+
+}
+
+#disqus_thread {
+
+  @basePc: (18 / 432) * 100%;
+  padding: @basePx @basePc;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
   }
 
 }

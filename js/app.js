@@ -1,14 +1,38 @@
 (function () {
 
-  Modernizr.load({
-    test: Modernizr.mq('only screen and (min-width: 768px)') && window.location.pathname == "/",
-    yep: '/js/desktop.js'
-  })
+  window._gaq = _gaq=[['_setAccount','UA-21690040-1'],['_trackPageview'],['_trackPageLoadTime'],['_setSiteSpeedSampleRate',10]];
+  window.disqus_developer = 1;
 
-  var body, header, svgs;
+  Modernizr.load([{
+    load:('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' 
+  },{
+    test: Modernizr.mq('only screen and (min-width: 768px)') && window.location.pathname == '/',
+    yep: '/js/desktop.js'
+  },{
+    test: window.location.pathname == '/',
+    nope: 'http://danshearmursblog.disqus.com/embed.js'
+  }]);
+
+  var body, header, svgs, gists, g, gist_id, scripts;
 
   function getFirst(el) {
     return document.getElementsByTagName(el)[0];
+  }
+
+  function getDivsByClass(class) {
+    var divs, classes, i, div;
+    if (document.querySelectorAll) {
+      return document.querySelectorAll('div.' + class);
+    }
+    divs = document.getElementsByTagNmae('div');
+    classes = [];
+    for (i = 0; i < divs.length; i++) {
+      div = divs[i];
+      if (div.className.indexOf(class) != -1) {
+        classes.push(div);
+      }
+    }
+    return classes;
   }
 
   body   = getFirst('body');
@@ -65,7 +89,8 @@
   }
 
   function updateColours () {
-    for (var i = 0, svg, colour; svg = svgs[i]; i++) {
+    var i, svg, colour;
+    for (i = 0; svg = svgs[i]; i++) {
       colour = getColour();
       svg.forEach(function (el) {
         el.animate({
@@ -88,5 +113,24 @@
 
   Svg('M8,18L18,18L18,8L25.2222,8C26.7564,8,28,9.2436,28,10.7778L28,18L18.5556,18L18.5556,28L10.7778,28C9.2436,28,8,26.7564,8,25.2222L8,18zM5,0C2.2385,0,0,2.2385,0,5L0,31C0,33.7615,2.2385,36,5,36L31,36C33.7615,36,36,33.7615,36,31L36,5C36,2.2385,33.7615,0,31,0L5,0z',
       'delicious');
+
+  // <div id="gid-1993718" class="gist-insert"></div>
+  document.write = function (str) {
+    var id, div;
+    if (str.indexOf('<div id=\"gist-') != 0) {
+      return;
+    }
+    id = /<div id=\"gist-(\d+)/.exec(str)[1];
+    el = document.getElementById('gid-' + id);
+    el.innerHTML = str;
+    el.className += 'gist-content';
+  }
+
+  gists = getDivsByClass('gist-insert');
+  scripts = [];
+  for (g = 0; g < gists.length; g++) {
+    gist_id = gists[g].id.replace('gid-', '');
+    Modernizr.load('https://gist.github.com/' + gist_id + '.js');
+  }
 
 })();

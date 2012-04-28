@@ -4,9 +4,8 @@
   window.disqus_shortname = 'danshearmursblog';
   window.disqus_developer = 1;
 
+  Modernizr.load(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
   Modernizr.load([{
-    load:('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' 
-  },{
     test: Modernizr.mq('only screen and (min-width: 768px)') && window.location.pathname == '/',
     yep: '/js/desktop.js'
   },{

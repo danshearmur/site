@@ -9,8 +9,9 @@ title: djs
       {{ post.content }}
     </article>
   {% endfor %}
-  <div id="pages">
+  <div clas="pagintion">
     {% if paginator.previous_page %}<a href="{% if paginator.previous_page == 1 %}/blog{% else %}/page{{ paginator.previous_page }}/blog.html{% endif %}">Previous</a>{% endif %} 
     {% if paginator.next_page %}<a href="/page{{ paginator.next_page }}/blog.html">Next</a>{% endif %}
   </div>
+  <aside></aside>
 

@@ -1,6 +1,7 @@
 (function () {
 
   window._gaq = _gaq=[['_setAccount','UA-21690040-1'],['_trackPageview'],['_trackPageLoadTime'],['_setSiteSpeedSampleRate',10]];
+  window.disqus_shortname = 'danshearmursblog';
   window.disqus_developer = 1;
 
   Modernizr.load([{

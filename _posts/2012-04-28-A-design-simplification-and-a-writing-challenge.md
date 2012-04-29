@@ -7,7 +7,7 @@ I have been working on the redesign of this website for quite a while now. As ma
 
 Historically I have had little success in terms of posting here. Lack of regularity, quality and substance can be blamed on any number of excuses, but my main issue was never really spending enough time on it.
 
-So with the aim of changing this situation and my sketch pad full of ideas, **I hear by challenge myself to wite 12 articles in 12 weeks**.
+So with the aim of changing this situation and my sketch pad full of ideas, **I hear by challenge myself to write 12 articles in 12 weeks**.
 
 ## A fresh start
 

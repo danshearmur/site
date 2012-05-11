@@ -86,6 +86,10 @@ NVDA specific shortcuts
 * `NVDA + tab` will tell you which window has focus
 * `NVDA + down arrow` to start reading and `ctrl` to stop
 * `NVDA + space` to switch between browse and focus mode
+* `h` for the next heading
+* `k` for the next link
+* `f` for the next form element
+* `NVDA + f7` for the elements list
 
 ## Things to keep in mind
 

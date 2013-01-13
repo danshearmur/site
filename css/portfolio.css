@@ -107,9 +107,14 @@ h2 {
 
 /* buttons */
 .iframe-toggle {
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
+}
+
+.csstransforms .iframe-toggle {
+    display: block;
 }
 
 .iframe-toggle-butt {
@@ -208,11 +213,11 @@ h2 {
     height: 700px;
     border: 0;
     background: #fff;
-    -webkit-transform: scale(0.4195);
-    -moz-transform: scale(0.4195);
-    -ms-transform: scale(0.4195);
-    -o-transform: scale(0.4195);
-    transform: scale(0.4195);
+    -webkit-transform: scale(0.40833333333);
+    -moz-transform: scale(0.40833333333);
+    -ms-transform: scale(0.40833333333);
+    -o-transform: scale(0.40833333333);
+    transform: scale(0.40833333333);
     -webkit-transform-origin: 0 0;
     -moz-transform-origin: 0 0;
     -ms-transform-origin: 0 0;
@@ -227,10 +232,16 @@ h2 {
     bottom: 0;
     left: 0;
     background: no-repeat url(../img/spinner2.svg) #3c3c3c center center;
+    opacity: 1;
+    pointer-events: none;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
 }
 
 .no-svg .browser-spinner {
-    background-image: url(../img/
+    background-image: url(../img/spinner.gid);
 }
 
 
@@ -240,10 +251,6 @@ h2 {
 
 .logo:hover {
     box-shadow: 0 0 10px 0 #999999;
-}
-
-.iframe-toggle {
-    display: none;
 }
 
 .iframe-toggle-butt-on {
@@ -256,21 +263,25 @@ h2 {
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
     transform: scale(1.2);
-    -webkit-transition: -webkit-transform 0.5s ease-out;
+   -webkit-transition: -webkit-transform 0.5s ease-out;
     -moz-transition: -moz-transform 0.5s ease-out;
     -o-transition: -o-transform 0.5s ease-out;
     transition: transform 0.5s ease-out;
 }
 
-.broser-iframe {
+.browser-iframe {
     display: none;
 }
 
-.browser-iframe-show .broser-iframe {
+.browser-iframe {
     display: block;
 }
 
-.browser-iframe-show .browser-spinner {
+.browser-iframe-show .browser-spinner { 
+    opacity: 0;
+}
+
+.no-csstransforms .browser-iframe-show .browser-spinner {
     display: none;
 }
 

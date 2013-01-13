@@ -1,0 +1,307 @@
+/*
+
+
+
+*/
+
+
+/*
+# BASE
+*/
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #3c3c3c;
+    color: #ccc;
+    font: 24px/36px 'Strait', sans-serif;
+}
+
+a,
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 2;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+
+/*
+# LAYOUT
+*/
+
+.brand-inner,
+.container,
+.end {
+    position: relative;
+    width: 792px;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 72px 0;
+}
+
+
+/*
+# MODULE
+*/
+
+/* header */
+.brand {
+    position: relative;
+    background: #FBC104;
+    color: #3c3c3c;
+    height: 72px;
+}
+
+.brand:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 72px;
+    background: #FDDA68;
+}
+
+.brand-inner {
+    background: #FBC104;
+}
+
+.logo {
+    display: block;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 18px;
+    left: -54px;
+    border-radius: 5px;
+    background: no-repeat url(../img/logo.png) #000 center center;
+    text-indent: -10000px;
+}
+
+.title {
+    margin: 0;
+    padding: 0 18px;
+}
+
+/* buttons */
+.iframe-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.iframe-toggle-butt {
+    float: left;
+    height: 72px;
+    width: 72px;
+    margin-left: 18px;
+    border: 0;
+    background: #FDDA68;
+    color: #3c3c3c;
+    cursor: pointer;
+}
+
+.iframe-toggle .iframe-toggle-butt {
+    font-size: 36px;
+}
+
+/* footer */
+.end {
+    border-top: 5px solid #ccc;
+    font: 14px/18px sans-serif;
+}
+
+.more-info {
+    float: right;
+}
+
+.site,
+.site:visited {
+    color: #FBC104;
+}
+
+/* browser */
+.browser {
+    margin: 36px;
+    position: relative;
+    width: 500px;
+    height: 320px;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.browser:before,
+.browser:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    border: 10px solid transparent;
+}
+
+.browser:before {
+    left: 15px;
+    border-left: 0;
+    border-right-color: #ffffff;
+}
+
+.browser:after {
+    left: 30px;
+    border-right: 0;
+    border-left-color: #ffffff;
+}
+
+.browser-search {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    left: 50px;
+    height: 30px;
+    padding: 0 5px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 28px; /* magic number! */
+    text-decoration: none;
+}
+
+.browser-dom {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 2px solid #ffffff;
+}
+
+.broser-iframe {
+    width: 1200px;
+    height: 700px;
+    border: 0;
+    background: #fff;
+    -webkit-transform: scale(0.4195);
+    -moz-transform: scale(0.4195);
+    -ms-transform: scale(0.4195);
+    -o-transform: scale(0.4195);
+    transform: scale(0.4195);
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+
+/*
+# STATE
+*/
+
+.logo:hover {
+    box-shadow: 0 0 10px 0 #999999;
+}
+
+.iframe-toggle {
+    display: none;
+}
+
+.iframe-toggle-butt-on {
+    color: #000;
+}
+
+.browser:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    -moz-transition: -moz-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+}
+
+.broser-iframe {
+    display: none;
+}
+
+
+/*
+# RESPONSIVE
+*/
+@media only screen and (max-width: 792px) {
+
+    .title,
+    .logo {
+        position: static;
+        float: left;
+    }
+
+    .logo {
+        margin: 18px;
+    }
+
+    .brand:before {
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+
+/*
+ * FIXME
+ */
+
+.browsers-inline {
+    width: 100000px;
+}
+
+
+.browsers-inline:before,
+.browsers-inline:after {
+    content: " ";
+    display: table;
+}
+
+.browsers-inline:after {
+    clear: both;
+}
+
+.browsers-inline .browser {
+    float: left;
+}
+
+

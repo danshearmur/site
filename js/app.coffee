@@ -1,5 +1,5 @@
 utils = 
     qa: (selector, scope) ->
-        nodes = (scope || document).querySelector(selector)
+        nodes = (scope || document).querySelectorAll(selector)
         Array::slice.call(nodes)
 

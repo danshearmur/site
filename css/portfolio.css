@@ -203,7 +203,7 @@ h2 {
     border-top: 2px solid #ffffff;
 }
 
-.broser-iframe {
+.browser-iframe {
     width: 1200px;
     height: 700px;
     border: 0;
@@ -227,6 +227,10 @@ h2 {
     bottom: 0;
     left: 0;
     background: no-repeat url(../img/spinner2.svg) #3c3c3c center center;
+}
+
+.no-svg .browser-spinner {
+    background-image: url(../img/
 }
 
 
@@ -259,6 +263,14 @@ h2 {
 }
 
 .broser-iframe {
+    display: none;
+}
+
+.browser-iframe-show .broser-iframe {
+    display: block;
+}
+
+.browser-iframe-show .browser-spinner {
     display: none;
 }
 

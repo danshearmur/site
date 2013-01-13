@@ -65,11 +65,11 @@
 
   })();
 
-  container = utils.qa('.container');
+  container = utils.q('.container');
 
   site = new Site({
     site_link: "http://semantico.github.com/standards",
     site_img: "standards"
-  }, container[0]);
+  }, container);
 
 }).call(this);

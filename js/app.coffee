@@ -2,6 +2,8 @@ utils = (->
 
     id_counter = 0
 
+    format_r = /[^a-zA-Z0-9-]/g
+
     return {
 
         q: (selector, scope) ->
@@ -19,73 +21,150 @@ utils = (->
         trim: (str) ->
             String::trim.call(str)
 
-        toggleClass: (el, name, isOn) ->
-            if isOn
-                el.className += " #{ name }"
-            else
-                el.className = @trim(" #{ el.className } ".replace(new RegExp(" #{ name } ", "g")))
+        format: (str) ->
+            @trim(str.toLowerCase()).replace(format_r, "-")
+
+        remove: (el) ->
+            el.parentElement.removeChild(el)
 
     }
 
 )()
 
+window.utils = utils
+
+
 class Site
     constructor: (@conf, @container) ->
         @conf.trunc_site_link = @conf.site_link.replace(/.*?:\/\//g, "")
         @conf.id = utils.id("site-")
-        @image = ""#"<img class="browser-screenshot" src="img/screenshots/#{ @conf.site_img }.png" alt="screenshot" />"""
+        @image = """<img class="browser-screenshot" src="img/screenshots/#{ @conf.site_img }.png" alt="screenshot" />"""
         if Modernizr.csstransforms
-            @drawIframe()
+            @draw_iframe()
         else
-            @drawImage()
+            @draw_image()
 
-    drawUi: (content) ->
-        @container.innerHTML += """<div class="browser" data-site-id="#{ @conf.id }">
+    draw_ui: (content) ->
+        @container.innerHTML += """<div id="#{ utils.format(@conf.site_name) }" class="browser" data-site-id="#{ @conf.id }">
             <a class="browser-search" href="#{ @conf.site_link }" target="_blank">#{ @conf.trunc_site_link }</a>
             <div class="browser-dom">
                 #{ content }
             </div>
         </div>"""
-        @browser = utils.q("[data-site-id=\"#{ @conf.id }\"]", @container)
 
-    drawImage: ->
-         @drawUi(@image)
+    draw_image: ->
+         @draw_ui(@image)
 
-    drawIframe: ->
-        @drawUi("""#{ @image }
+    draw_iframe: ->
+        @draw_ui("""#{ @image }
                     <iframe class="browser-iframe"></iframe>
                     <div class="browser-spinner"></div>""")
-        @iframe = utils.q(".browser-iframe", @browser)
-        @spinner = utils.q(".browser-spinner", @browser)
-        @load()
+        # who would have thought innerHTML is asyncronous?!
+        setTimeout( =>
+            @load.call(@)
+        , 1)
 
     load: ->
-        @iframe.addEventListener('load', (e) =>
-            console.log(@browser)
-            utils.toggleClass(@browser, "browser-iframe-show", true)
-        )
+        @browser = utils.q("[data-site-id=\"#{ @conf.id }\"]")
+        @iframe = utils.q(".browser-iframe", @browser)
+        @spinner = utils.q(".browser-spinner", @browser)
+        @dom = utils.q(".browser-dom", @browser)
+        @iframe.addEventListener "load", (e) =>
+            @browser.classList.add("browser-show")
         @iframe.src = @conf.site_link
+        @iframe_showing = true
+
+    remove_iframe: ->
+        @browser.classList.remove("browser-show")
+        setTimeout =>
+            utils.remove(@iframe)
+            @browser.classList.add("browser-show")
+        , 500
+
+    add_iframe: ->
+        @browser.classList.remove("browser-show")
+        setTimeout =>
+            @dom.insertBefore(@iframe, @spinner)
+        , 500
+
+    toggle_iframe: ->
+        if @iframe_showing
+            @remove_iframe()
+        else
+            @add_iframe()
+        @iframe_showing = !@iframe_showing
 
 
 
+class Portfolio
+    constructor: (@init) ->
+        @container = utils.q('.container')
+        return if !@container?
+        @render()
+        @bind_btns()
+
+    render: ->
+        @iframe_showing = Modernizr.csstransforms
+        @browsers = []
+        div = false
+        @init.forEach (o) =>
+            if o.p
+                div = false
+                @p(o.p)
+            else
+                if !div
+                    div = document.createElement("div")
+                    div.className = "browsers"
+                    @container.appendChild(div)
+                @browsers.push(new Site(o.site, div))
+
+    p: (txt) ->
+        @container.innerHTML += "<p>#{ txt }</p>"
+
+    toggle_all: (show_iframe) ->
+        return if show_iframe == @iframe_showing
+        method = "#{ if show_iframe then 'add' else 'remove' }_iframe"
+        console.log 'run', method
+        @browsers.forEach (browser) ->
+            browser[method]()
+        @iframe_showing = !@iframe_showing
+
+    bind_btns: ->
+        utils.qa(".iframe-toggle-butt").forEach (el) =>
+            el.addEventListener "click", (e) =>
+                e.preventDefault()
+                @toggle_all(el.id == "true")
 
 
-container = utils.q('.container')
+test = [
+    { p: "lol what" }
+    { site: {
+        site_name: "Semantico Coding Standards"
+        site_link: "http://semantico.github.com/standards"
+        site_img: "standards"
+    }}
+    { p: "lol what" }
+    { site: {
+        site_name: "Semantico Corporate Website"
+        site_link: "http://www.semantico.com"
+        site_img: "standards"
+    }}
+    { site: {
+        site_name: "xyz"
+        site_link: "http://www.semantico.com"
+        site_img: "standards"
+    }}
+    { site: {
+        site_name: "Old Acres Printers"
+        site_link: "http://www.oldacres.co.uk"
+        site_img: "standards"
+    }}
+    { p: "lol what" }
+    { site: {
+        site_name: "Semantico Coding Standards"
+        site_link: "http://semantico.github.com/standards"
+        site_img: "standards"
+    }}
+]
 
-site = new Site({
-    site_link: "http://semantico.github.com/standards"
-    site_img: "standards"
-}, container)
-
-new Site({
-    site_link: "http://www.semantico.com"
-    site_img: "standards"
-}, container)
-new Site({
-    site_link: "http://www.semantico.com"
-    site_img: "standards"
-}, container)
-new Site({
-    site_link: "http://www.oldacres.co.uk"
-    site_img: "standards"
-}, container)
+window.portfolio = new Portfolio(test)

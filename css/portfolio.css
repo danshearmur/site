@@ -52,12 +52,16 @@ h2 {
 .container,
 .end {
     position: relative;
-    width: 792px;
+    width: 954px;
     margin: 0 auto;
 }
 
 .container {
     padding: 72px 0;
+}
+
+.end {
+    clear:both
 }
 
 
@@ -149,10 +153,11 @@ h2 {
 
 /* browser */
 .browser {
-    margin: 36px 54px;
+    float: left;
+    margin: 36px 0 36px 54px;
     position: relative;
-    width: 500px;
-    height: 320px;
+    width: 396px;
+    height: 252px;
     border: 5px solid #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -209,15 +214,20 @@ h2 {
 }
 
 .browser-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 1200px;
-    height: 700px;
+    height: 675px;
     border: 0;
     background: #fff;
-    -webkit-transform: scale(0.40833333333);
-    -moz-transform: scale(0.40833333333);
-    -ms-transform: scale(0.40833333333);
-    -o-transform: scale(0.40833333333);
-    transform: scale(0.40833333333);
+    -webkit-transform: scale(.32166666666);
+    -moz-transform: scale(.32166666666);
+    -ms-transform: scale(.32166666666);
+    -o-transform: scale(.32166666666);
+    transform: scale(.32166666666);
     -webkit-transform-origin: 0 0;
     -moz-transform-origin: 0 0;
     -ms-transform-origin: 0 0;

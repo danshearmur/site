@@ -16,6 +16,15 @@ utils = (->
             start = if pfx? then '' + pfx else ''
             start + id
 
+        trim: (str) ->
+            String::trim.call(str)
+
+        toggleClass: (el, name, isOn) ->
+            if isOn
+                el.className += " #{ name }"
+            else
+                el.className = @trim(" #{ el.className } ".replace(new RegExp(" #{ name } ", "g")))
+
     }
 
 )()
@@ -24,6 +33,7 @@ class Site
     constructor: (@conf, @container) ->
         @conf.trunc_site_link = @conf.site_link.replace(/.*?:\/\//g, "")
         @conf.id = utils.id("site-")
+        @image = ""#"<img class="browser-screenshot" src="img/screenshots/#{ @conf.site_img }.png" alt="screenshot" />"""
         if Modernizr.csstransforms
             @drawIframe()
         else
@@ -39,10 +49,11 @@ class Site
         @browser = utils.q("[data-site-id=\"#{ @conf.id }\"]", @container)
 
     drawImage: ->
-         @drawUi("""<img src="img/screenshots/#{ @conf.site_img }.png" alt="screenshot" />""")
+         @drawUi(@image)
 
     drawIframe: ->
-        @drawUi("""<iframe class="browser-iframe"></iframe>
+        @drawUi("""#{ @image }
+                    <iframe class="browser-iframe"></iframe>
                     <div class="browser-spinner"></div>""")
         @iframe = utils.q(".browser-iframe", @browser)
         @spinner = utils.q(".browser-spinner", @browser)
@@ -50,7 +61,8 @@ class Site
 
     load: ->
         @iframe.addEventListener('load', (e) =>
-            @browser.className += " browser-iframe-show"
+            console.log(@browser)
+            utils.toggleClass(@browser, "browser-iframe-show", true)
         )
         @iframe.src = @conf.site_link
 
@@ -62,5 +74,18 @@ container = utils.q('.container')
 
 site = new Site({
     site_link: "http://semantico.github.com/standards"
+    site_img: "standards"
+}, container)
+
+new Site({
+    site_link: "http://www.semantico.com"
+    site_img: "standards"
+}, container)
+new Site({
+    site_link: "http://www.semantico.com"
+    site_img: "standards"
+}, container)
+new Site({
+    site_link: "http://www.oldacres.co.uk"
     site_img: "standards"
 }, container)

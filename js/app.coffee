@@ -60,9 +60,9 @@ class Site
                     <iframe class="browser-iframe"></iframe>
                     <div class="browser-spinner"></div>""")
         # who would have thought innerHTML is asyncronous?!
-        setTimeout( =>
+        setTimeout =>
             @load.call(@)
-        , 1)
+        , 1
 
     load: ->
         @browser = utils.q("[data-site-id=\"#{ @conf.id }\"]")
@@ -130,11 +130,22 @@ class Portfolio
         @iframe_showing = !@iframe_showing
 
     bind_btns: ->
+        nav = utils.q(".iframe-toggle")
+        nav.classList.add("on")
         utils.qa(".iframe-toggle-butt").forEach (el) =>
             el.addEventListener "click", (e) =>
                 e.preventDefault()
-                @toggle_all(el.id == "true")
+                bool = el.id == "true"
+                @toggle_all(bool)
+                if bool
+                    nav.classList.remove("off")
+                    nav.classList.add("on")
+                else
+                    nav.classList.remove("on")
+                    nav.classList.add("off")
 
+
+window.Portfolio = Portfolio
 
 test = [
     { p: "lol what" }

@@ -318,10 +318,19 @@ p {
     display: none;
 }
 
+.on #true {
+    color: #fff;
+}
+
+.off #false {
+    color: #fff;
+}
+
 
 /*
 # RESPONSIVE
 */
+/* TODO */
 @media only screen and (max-width: 792px) {
 
     .title,

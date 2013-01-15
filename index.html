@@ -17,7 +17,7 @@
             <h1 class="title">portfolio</h1>
 
             <nav class="iframe-toggle">
-                <button id="false" class="iframe-toggle-butt" title="Render pictures"><span class="icon-picture"></span></button>
+                <button id="false" class="iframe-toggle-butt" title="Render images"><span class="icon-picture"></span></button>
                 <button id="true" class="iframe-toggle-butt" title="Render iframes"><span class="icon-magic"></span></button>
             </nav>
 
@@ -29,14 +29,12 @@
 
     </div>
 
-
-
     <footer class="end" role="supplimental">
         <p class="more-info"><a href="#">about</a></p>
         <p class="copyright">&copy; <a class="site" href="//dan.shearmur.co.uk/">dan shearmur</a> 2012</p>
     </footer>
 
-    <script>yepnope('js/app.js');</script>
+    <script>yepnope({ test: document.body.classList, nope: 'js/vendor/classList.js', both: 'js/app.js' });</script>
 
 </body>
 </html>

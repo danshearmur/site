@@ -160,11 +160,23 @@
     };
 
     Portfolio.prototype.bind_btns = function() {
-      var _this = this;
+      var nav,
+        _this = this;
+      nav = utils.q(".iframe-toggle");
+      nav.classList.add("on");
       return utils.qa(".iframe-toggle-butt").forEach(function(el) {
         return el.addEventListener("click", function(e) {
+          var bool;
           e.preventDefault();
-          return _this.toggle_all(el.id === "true");
+          bool = el.id === "true";
+          _this.toggle_all(bool);
+          if (bool) {
+            nav.classList.remove("off");
+            return nav.classList.add("on");
+          } else {
+            nav.classList.remove("on");
+            return nav.classList.add("off");
+          }
         });
       });
     };
@@ -172,6 +184,8 @@
     return Portfolio;
 
   })();
+
+  window.Portfolio = Portfolio;
 
   test = [
     {

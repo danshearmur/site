@@ -51,7 +51,7 @@
     }
 
     Site.prototype.draw_ui = function(content) {
-      return this.container.innerHTML += "<div id=\"" + (utils.format(this.conf.site_name)) + "\" class=\"browser\" data-site-id=\"" + this.conf.id + "\">\n    <a class=\"browser-search\" href=\"" + this.conf.site_link + "\" target=\"_blank\">" + this.conf.trunc_site_link + "</a>\n    <div class=\"browser-dom\">\n        " + content + "\n    </div>\n</div>";
+      return this.container.innerHTML += "<div id=\"" + (utils.format(this.conf.site_name)) + "\" class=\"item\">\n    <a class=\"lb-reset\" href=\"#_\"></a>\n    <div class=\"lb-wrapper\">\n        <div class=\"browser\" data-site-id=\"" + this.conf.id + "\">\n            <a class=\"browser-search\" href=\"#" + (utils.format(this.conf.site_name)) + "\">" + this.conf.trunc_site_link + "</a>\n            <div class=\"browser-dom\">\n                " + content + "\n            </div>\n        </div>\n        <div class=\"lb-content\">\n            <h2><a href=\"" + this.conf.site_link + "\" target=\"_blank\">" + this.conf.site_name + "</a></h2>\n            " + (this.conf.site_desc || "") + "\n            <p><a href=\"" + this.conf.site_link + "\" target=\"_blank\">" + this.conf.trunc_site_link + "</a></p>\n            <p><a href=\"#_\">Close</a></p>\n        </div>\n    </div>\n</div>";
     };
 
     Site.prototype.draw_image = function() {
@@ -111,9 +111,10 @@
 
   Portfolio = (function() {
 
-    function Portfolio(init) {
+    function Portfolio(init, selector) {
       this.init = init;
-      this.container = utils.q('.container');
+      this.selector = selector;
+      this.container = utils.q(this.selector);
       if (!(this.container != null)) {
         return;
       }
@@ -134,7 +135,7 @@
         } else {
           if (!div) {
             div = document.createElement("div");
-            div.className = "browsers";
+            div.className = "container";
             _this.container.appendChild(div);
           }
           return _this.browsers.push(new Site(o.site, div));
@@ -152,7 +153,6 @@
         return;
       }
       method = "" + (show_iframe ? 'add' : 'remove') + "_iframe";
-      console.log('run', method);
       this.browsers.forEach(function(browser) {
         return browser[method]();
       });
@@ -227,6 +227,6 @@
     }
   ];
 
-  window.portfolio = new Portfolio(test);
+  window.portfolio = new Portfolio(test, '#main');
 
 }).call(this);

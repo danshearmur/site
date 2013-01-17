@@ -45,10 +45,21 @@ class Site
             @draw_image()
 
     draw_ui: (content) ->
-        @container.innerHTML += """<div id="#{ utils.format(@conf.site_name) }" class="browser" data-site-id="#{ @conf.id }">
-            <a class="browser-search" href="#{ @conf.site_link }" target="_blank">#{ @conf.trunc_site_link }</a>
-            <div class="browser-dom">
-                #{ content }
+        @container.innerHTML += """<div id="#{ utils.format(@conf.site_name) }" class="item">
+            <a class="lb-reset" href="#_"></a>
+            <div class="lb-wrapper">
+                <div class="browser" data-site-id="#{ @conf.id }">
+                    <a class="browser-search" href="##{ utils.format(@conf.site_name) }">#{ @conf.trunc_site_link }</a>
+                    <div class="browser-dom">
+                        #{ content }
+                    </div>
+                </div>
+                <div class="lb-content">
+                    <h2><a href="#{ @conf.site_link}" target="_blank">#{ @conf.site_name }</a></h2>
+                    #{ @conf.site_desc || "" }
+                    <p><a href="#{ @conf.site_link}" target="_blank">#{ @conf.trunc_site_link }</a></p>
+                    <p><a href="#_">Close</a></p>
+                </div>
             </div>
         </div>"""
 
@@ -97,8 +108,8 @@ class Site
 
 
 class Portfolio
-    constructor: (@init) ->
-        @container = utils.q('.container')
+    constructor: (@init, @selector) ->
+        @container = utils.q(@selector)
         return if !@container?
         @render()
         @bind_btns()
@@ -114,7 +125,7 @@ class Portfolio
             else
                 if !div
                     div = document.createElement("div")
-                    div.className = "browsers"
+                    div.className = "container"
                     @container.appendChild(div)
                 @browsers.push(new Site(o.site, div))
 
@@ -124,7 +135,6 @@ class Portfolio
     toggle_all: (show_iframe) ->
         return if show_iframe == @iframe_showing
         method = "#{ if show_iframe then 'add' else 'remove' }_iframe"
-        console.log 'run', method
         @browsers.forEach (browser) ->
             browser[method]()
         @iframe_showing = !@iframe_showing
@@ -178,4 +188,4 @@ test = [
     }}
 ]
 
-window.portfolio = new Portfolio(test)
+window.portfolio = new Portfolio(test, '#main')

@@ -31,8 +31,6 @@ utils = (->
 
 )()
 
-window.utils = utils
-
 
 class Site
     constructor: (@conf, @container) ->
@@ -106,7 +104,6 @@ class Site
         @iframe_showing = !@iframe_showing
 
 
-
 class Portfolio
     constructor: (@init, @selector) ->
         @container = utils.q(@selector)
@@ -157,35 +154,35 @@ class Portfolio
 
 window.Portfolio = Portfolio
 
-test = [
-    { p: "lol what" }
-    { site: {
-        site_name: "Semantico Coding Standards"
-        site_link: "http://semantico.github.com/standards"
-        site_img: "standards"
-    }}
-    { p: "lol what" }
-    { site: {
-        site_name: "Semantico Corporate Website"
-        site_link: "http://www.semantico.com"
-        site_img: "standards"
-    }}
-    { site: {
-        site_name: "xyz"
-        site_link: "http://www.semantico.com"
-        site_img: "standards"
-    }}
-    { site: {
-        site_name: "Old Acres Printers"
-        site_link: "http://www.oldacres.co.uk"
-        site_img: "standards"
-    }}
-    { p: "lol what" }
-    { site: {
-        site_name: "Semantico Coding Standards"
-        site_link: "http://semantico.github.com/standards"
-        site_img: "standards"
-    }}
-]
+#test = [
+    #{ p: "lol what" }
+    #{ site: {
+        #site_name: "Semantico Coding Standards"
+        #site_link: "http://semantico.github.com/standards"
+        #site_img: "standards"
+    #}}
+    #{ p: "lol what" }
+    #{ site: {
+        #site_name: "Semantico Corporate Website"
+        #site_link: "http://www.semantico.com"
+        #site_img: "standards"
+    #}}
+    #{ site: {
+        #site_name: "xyz"
+        #site_link: "http://www.semantico.com"
+        #site_img: "standards"
+    #}}
+    #{ site: {
+        #site_name: "Old Acres Printers"
+        #site_link: "http://www.oldacres.co.uk"
+        #site_img: "standards"
+    #}}
+    #{ p: "lol what" }
+    #{ site: {
+        #site_name: "Semantico Coding Standards"
+        #site_link: "http://semantico.github.com/standards"
+        #site_img: "standards"
+    #}}
+#]
 
-window.portfolio = new Portfolio(test, '#main')
+#window.portfolio = new Portfolio(test, '#main')

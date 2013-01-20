@@ -1,0 +1,10 @@
+[
+    { p: "Side projects and experiments" },
+    {
+        site: {
+            site_name: "Pomodoro timer",
+            site_desc: "A slightly more complicated take on the typical Todo app, documented in countless MV* JavaScript framework tutorials",
+            site_link: "https://dl.dropbox.com/u/138393/pomodoro/index.html"
+        }
+    }
+]

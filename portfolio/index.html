@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>portfolio</title>
+    <link href="css/portfolio.css" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Strait" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css" rel="stylesheet" />
+    <script src="js/vendor/modernizr.min.js"></script>
+</head>
+<body>
+
+    <header class="brand" role="banner">
+        <div class="brand-inner">
+
+            <a class="logo" href="http://dan.shearmur.co.uk">djs</a>
+            <h1 class="title">portfolio</h1>
+
+            <nav class="iframe-toggle">
+                <button id="false" class="iframe-toggle-butt" title="Render images"><span class="icon-picture"></span></button>
+                <button id="true" class="iframe-toggle-butt" title="Render iframes"><span class="icon-magic"></span></button>
+            </nav>
+
+        </div>
+    </header>
+
+    <div id="main" class="wrapper" role="main"></div>
+
+    <footer class="end" role="supplimental">
+        <p class="more-info"><a href="#">about</a></p>
+        <p class="copyright">&copy; <a class="site" href="//dan.shearmur.co.uk/">dan shearmur</a> 2012</p>
+    </footer>
+
+    <script>yepnope({ test: document.body.classList, nope: 'js/vendor/classList.js', both: 'js/app.js' });</script>
+
+</body>
+</html>

@@ -1,27 +1,21 @@
 var webpage = require('webpage');
+var fs = require('fs');
 
-var sites = [
-    'http://semantico.github.com/standards',
-    'http://www.semantico.com',
-    'http://accessengineeringlibrary.com',
-    'http://referenceworks.brillonline.com',
-    'http://passit.co.uk',
-    'http://www.ajmaccountants.co.uk',
-    'http://dan.shearmur.co.uk'
-];
-
-var size = {
-    top: 0,
-    left: 0,
-    width: 1200,
-    height: 622
-};
+var file = fs.read('../../../_includes/portfolio/sites.json');
+var json = JSON.parse(file);
+var sites = [];
+json.forEach(function (item) {
+    if (!item.p) {
+        sites.push(item.site.site_link);
+    }
+});
+    console.log(sites);
 
 (function (i) {
     console.log(i);
     var page = webpage.create();
     page.viewportSize = { width: 1200, height: 622 };
-    page.clipRect = size;
+    page.clipRect = { top: 0, left: 0, width: 1200, height: 622 };
     var site = sites[i];
     var image = site.replace(/.*?:\/\//g, '').replace(/[^a-zA-Z0-9-]/g, '-') + '.png';
     var fn = arguments.callee;

@@ -18,21 +18,21 @@
     {
         "site": {
             "site_name": "ORCID",
-            "site_desc": "<p></p>",
+            "site_desc": "<p>ORCID is an open, non-profit, community-based effort to provide a registry of unique researcher identifiers.</p>",
             "site_link": "http://orcid.org"
         }
     },
     {
         "site": {
             "site_name": "MHP Access Engineering",
-            "site_desc": "<p>This site had a number of difficult JavaScript challenges.</p>",
+            "site_desc": "<p>AccessEngineering from McGraw-Hill is an innovative online reference and learning resource.</p>",
             "site_link": "http://accessengineeringlibrary.com"
         }
     },
     {
         "site": {
             "site_name": "Passit",
-            "site_desc": "<p></p>",
+            "site_desc": "<p>PASSit is an online revision service from Oxford University Press, designed for use by junior doctors preparing for their postgraduate professional exams.</p>",
             "site_link": "http://passit.co.uk"
         }
     },
@@ -61,8 +61,9 @@
     {
         "site": {
             "site_name": "My personal site",
-            "site_desc": "<p></p>",
+            "site_desc": "<p>Intending to do more blogging I designed this site to concentrate on content.</p>",
             "site_link": "http://dan.shearmur.co.uk"
         }
-    }
+    },
+    { "p": "For older stuff check out <a href=\"http://2011.archive.dan.shearmur.co.uk\">my old site</a>." }
 ]

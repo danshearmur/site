@@ -44,6 +44,8 @@ layout: none
     <script>
         yepnope({ test: document.body.classList, nope: 'js/vendor/classList.js',
             complete: function () { new Portfolio({% include portfolio/sites.json %}, '#main'); } });
+        window._gaq = [['_setAccount','UA-21690040-1'],['_trackPageview'],['_trackPageLoadTime'],['_setSiteSpeedSampleRate',10]];
+        yepnope(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
     </script>
 
 </body>

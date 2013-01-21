@@ -6,10 +6,14 @@ layout: none
 <head>
     <meta charset="utf-8" />
     <title>portfolio</title>
-    <style>{% include portfolio/css/portfolio.css %}</style>
+    <style>
+{% include portfolio/css/portfolio.css %}
+    </style>
     <link href="//fonts.googleapis.com/css?family=Strait" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css" rel="stylesheet" />
-    <script>{% include portfolio/js/vendor/modernizr.min.js %}</script>
+    <script>
+{% include portfolio/js/vendor/modernizr.min.js %}
+    </script>
 </head>
 <body>
 
@@ -34,7 +38,9 @@ layout: none
         <p class="copyright">&copy; <a class="site" href="//dan.shearmur.co.uk/">dan shearmur</a> 2012</p>
     </footer>
 
-    <script>{% include portfolio/js/app.js %}</script>
+    <script>
+{% include portfolio/js/app.js %}
+    </script>
     <script>
         yepnope({ test: document.body.classList, nope: 'js/vendor/classList.js',
             complete: function () { new Portfolio({% include portfolio/sites.json %}, '#main'); } });

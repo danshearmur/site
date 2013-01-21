@@ -136,6 +136,18 @@ p {
     top: 0;
 }
 
+.warning {
+    position: absolute;
+    top: 100%;
+    width: 954px;
+    right: 0;
+    opacity: 0;
+    color: #fff;
+    font: 14px/18px sans-serif;
+    text-align: right;
+    margin: 18px 0;
+}
+
 .csstransforms .iframe-toggle {
     display: block;
 }
@@ -381,6 +393,11 @@ p {
     transform: scale(.36);
 }
 
+:target .browser-screenshot {
+    width: 422px;
+    height: 225px;
+}
+
 :target .browser:hover {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -394,6 +411,35 @@ p {
     width: 432px;
     margin-left: 36px;
 }
+
+.warning {
+    -webkit-animation: fadeout 15s;
+    -moz-animation: fadeout 15s;
+    -o-animation: fadeout 15s;
+    animation: fadeout 15s;
+}
+
+@-webkit-keyframes fadeout {
+    0%   { opacity: 1; }
+    100%  { opacity: 0; }
+}
+
+@-moz-keyframes fadeout {
+    0%   { opacity: 1; }
+    100%  { opacity: 0; }
+}
+
+@-o-keyframes fadeout {
+    0%   { opacity: 1; }
+    100%  { opacity: 0; }
+}
+
+@keyframes fadeout {
+    0%   { opacity: 1; }
+    100%  { opacity: 0; }
+}
+
+
 
 /*
 # RESPONSIVE

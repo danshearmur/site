@@ -13,5 +13,56 @@
             "site_desc": "<p>I made a clock that generates the background colour programatically, which you can read about <a href=\"http://2011.archive.dan.shearmur.co.uk/2011/02/26/my-colourful-clock.html\" target=\"_blank\">here</a></p>",
             "site_link": "http://dansclock.heroku.com"
         }
+    },
+    { "p": "At Semantico I led the front-end development on:" },
+    {
+        "site": {
+            "site_name": "ORCID",
+            "site_desc": "<p></p>",
+            "site_link": "http://orcid.org"
+        }
+    },
+    {
+        "site": {
+            "site_name": "MHP Access Engineering",
+            "site_desc": "<p>This site had a number of difficult JavaScript challenges.</p>",
+            "site_link": "http://accessengineeringlibrary.com"
+        }
+    },
+    {
+        "site": {
+            "site_name": "Passit",
+            "site_desc": "<p></p>",
+            "site_link": "http://passit.co.uk"
+        }
+    },
+    {
+        "site": {
+            "site_name": "Semantico's Corporate Website",
+            "site_desc": "<p></p>",
+            "site_link": "http://www.semantico.com"
+        }
+    },
+    {
+        "site": {
+            "site_name": "Brill Online Reference Works",
+            "site_desc": "<p></p>",
+            "site_link": "http://referenceworks.brillonline.com"
+        }
+    },
+    { "p": "Design work" },
+    {
+        "site": {
+            "site_name": "Semantico Coding Standards",
+            "site_desc": "<p>I designed this simple documentation website. Based on the Isobar Front-end Code Standards &amp; Best Practices, I also co-authored the Semantico specific updates.</p>",
+            "site_link": "http://semantico.github.com/standards"
+        }
+    },
+    {
+        "site": {
+            "site_name": "My personal site",
+            "site_desc": "<p></p>",
+            "site_link": "http://dan.shearmur.co.uk"
+        }
     }
 ]

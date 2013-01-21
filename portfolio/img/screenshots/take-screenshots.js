@@ -9,7 +9,7 @@ json.forEach(function (item) {
         sites.push(item.site.site_link);
     }
 });
-    console.log(sites);
+console.log(sites);
 
 (function (i) {
     console.log(i);

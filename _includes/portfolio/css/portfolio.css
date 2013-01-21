@@ -29,7 +29,7 @@ a:visited {
 
 h1,
 h2 {
-    font-family: sans-serif;
+    font-family: saompletee;
     font-weight: normal;
 }
 
@@ -122,12 +122,12 @@ p {
     top: 18px;
     left: -54px;
     border-radius: 5px;
-    background: no-repeat url(../img/logo.svg) #000 center center;
+    background: no-repeat url(img/logo.svg) #000 center center;
     text-indent: -10000px;
 }
 
 .no-svg .logo {
-    background-image: url(../img/logo.png);
+    background-image: url(img/logo.png);
 }
 
 .title {
@@ -275,7 +275,7 @@ p {
     right: 0;
     bottom: 0;
     left: 0;
-    background: no-repeat url(../img/spinner2.svg) #3c3c3c center center;
+    background: no-repeat url(img/spinner2.svg) #3c3c3c center center;
     opacity: 1;
     pointer-events: none;
     -webkit-transition: opacity 0.5s;
@@ -293,7 +293,7 @@ p {
 }
 
 .no-svg .browser-spinner {
-    background-image: url(../img/spinner.gid);
+    background-image: url(img/spinner.gid);
 }
 
 

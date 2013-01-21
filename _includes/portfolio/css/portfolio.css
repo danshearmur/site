@@ -183,7 +183,7 @@ p {
 }
 
 /* browser */
-.item {
+.browser-dom {
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
@@ -444,12 +444,11 @@ p {
 }
 
 
-
 /*
 # RESPONSIVE
 */
 /* TODO */
-@media only screen and (max-width: 792px) {
+@media only screen and (max-width: 1098px) {
 
     .title,
     .logo {
@@ -465,13 +464,9 @@ p {
         display: none;
     }
 
+    p {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
 }
-
-
-
-
-
-
-
-
-

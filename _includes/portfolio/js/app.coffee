@@ -11,7 +11,7 @@ utils = (->
 
         qa: (selector, scope) ->
             nodes = (scope || document).querySelectorAll(selector)
-            Array::slice.call(nodes)
+            Array::slice.call(nodes, 0)
 
         id: (pfx) ->
             id = ++id_counter

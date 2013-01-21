@@ -14,7 +14,7 @@
       qa: function(selector, scope) {
         var nodes;
         nodes = (scope || document).querySelectorAll(selector);
-        return Array.prototype.slice.call(nodes);
+        return Array.prototype.slice.call(nodes, 0);
       },
       id: function(pfx) {
         var id, start;

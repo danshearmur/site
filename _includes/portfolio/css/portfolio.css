@@ -183,6 +183,14 @@ p {
 }
 
 /* browser */
+.item {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
 .browser {
     position: relative;
     width: 396px;
@@ -191,11 +199,6 @@ p {
     border-radius: 10px;
     background: #3c3c3c;
     overflow: hidden;
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -250,6 +253,7 @@ p {
     left: 0;
     right: 0;
     border-top: 2px solid #ffffff;
+    background: #fff;
 }
 
 .browser-iframe {

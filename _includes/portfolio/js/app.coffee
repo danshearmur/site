@@ -1,8 +1,8 @@
 utils = (->
 
     id_counter = 0
-
     format_r = /[^a-zA-Z0-9-]/g
+    proto_r = /.*?:\/\//g
 
     return {
 
@@ -27,6 +27,9 @@ utils = (->
         remove: (el) ->
             el.parentElement.removeChild(el)
 
+        img_name: (url) ->
+            @trim(url).replace(proto_r, "").replace(format_r, "-")
+
     }
 
 )()
@@ -36,6 +39,7 @@ class Site
     constructor: (@conf, @container) ->
         @conf.trunc_site_link = @conf.site_link.replace(/.*?:\/\//g, "")
         @conf.id = utils.id("site-")
+        @conf.site_img = utils.img_name(@conf.site_link)
         @image = """<img class="browser-screenshot" src="img/screenshots/#{ @conf.site_img }.png" alt="screenshot" />"""
         if Modernizr.csstransforms
             @draw_iframe()

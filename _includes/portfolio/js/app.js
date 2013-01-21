@@ -3,9 +3,10 @@
   var Portfolio, Site, utils;
 
   utils = (function() {
-    var format_r, id_counter;
+    var format_r, id_counter, proto_r;
     id_counter = 0;
     format_r = /[^a-zA-Z0-9-]/g;
+    proto_r = /.*?:\/\//g;
     return {
       q: function(selector, scope) {
         return (scope || document).querySelector(selector);
@@ -29,6 +30,9 @@
       },
       remove: function(el) {
         return el.parentElement.removeChild(el);
+      },
+      img_name: function(url) {
+        return this.trim(url).replace(proto_r, "").replace(format_r, "-");
       }
     };
   })();
@@ -40,6 +44,7 @@
       this.container = container;
       this.conf.trunc_site_link = this.conf.site_link.replace(/.*?:\/\//g, "");
       this.conf.id = utils.id("site-");
+      this.conf.site_img = utils.img_name(this.conf.site_link);
       this.image = "<img class=\"browser-screenshot\" src=\"img/screenshots/" + this.conf.site_img + ".png\" alt=\"screenshot\" />";
       if (Modernizr.csstransforms) {
         this.draw_iframe();

@@ -1,17 +1,17 @@
 [
-    { p: "Side projects and experiments" },
+    { "p": "Side projects and experiments" },
     {
-        site: {
-            site_name: "Pomodoro timer",
-            site_desc: "<p>Not your standard backbone TODO app. Uses a timer to break down periods of work into 25-minute intervals called 'Pomodori' and 5-minute breaks.</p><p><a href=\"https://github.com/danshearmur/pomodoro\ target=\"_blank\">View source on github</a></p>",
-            site_link: "http://pomodoro.demos.dan.shearmur.co.uk"
+        "site": {
+            "site_name": "Pomodoro timer",
+            "site_desc": "<p>Not your standard backbone TODO app. Uses a timer to break down periods of work into 25-minute intervals called 'Pomodori' and 5-minute breaks.</p><p><a href=\"https://github.com/danshearmur/pomodoro\" target=\"_blank\">View source on github</a></p>",
+            "site_link": "http://pomodoro.demos.dan.shearmur.co.uk"
         }
     },
     {
-        site: {
-            site_name: "Colourful Clock",
-            site_desc: "<p>I made a clock that generates the background colour programatically, which you can read about <a href=\"http://2011.archive.dan.shearmur.co.uk/2011/02/26/my-colourful-clock.html\">here</a></p>",
-            site_link: "http://dansclock.heroku.com"
+        "site": {
+            "site_name": "Colourful Clock",
+            "site_desc": "<p>I made a clock that generates the background colour programatically, which you can read about <a href=\"http://2011.archive.dan.shearmur.co.uk/2011/02/26/my-colourful-clock.html\" target=\"_blank\">here</a></p>",
+            "site_link": "http://dansclock.heroku.com"
         }
     }
 ]

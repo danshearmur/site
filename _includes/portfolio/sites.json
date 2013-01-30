@@ -53,6 +53,13 @@
     { "p": "Design work" },
     {
         "site": {
+            "site_name": "My Curriculum Vitae",
+            "site_desc": "<p>Really simple content first, almost flat design aesthetic</p>",
+            "site_link": "http://dan.shearmur.co.uk/cv/"
+        }
+    },
+    {
+        "site": {
             "site_name": "Semantico Coding Standards",
             "site_desc": "<p>I designed this simple documentation website. Based on the Isobar Front-end Code Standards &amp; Best Practices, I also co-authored the Semantico specific updates.</p>",
             "site_link": "http://semantico.github.com/standards"

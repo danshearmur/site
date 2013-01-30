@@ -7,7 +7,7 @@
 * Bare metal JavaScript and prototypical inheritance
 * jQuery, YUI and dojo
 * CoffeeScript, Backbone and AngularJS
-* TDD and BDD
 * Mustache, freemarker, haml and jade
+* TDD and BDD
 * Client management
 * Team management

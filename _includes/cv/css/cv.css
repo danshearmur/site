@@ -9,42 +9,26 @@
 
 body {
     margin: 72px 0 0;
-    background: url(img/linedpaper.png) #fff;
     color: #000;
-    font: 22px/36px Georgia, serif;
-}
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) { 
-
-    body {
-        background: url(img/linedpaper_@2x.png) #fff;
-    }
-
+    font: 20px/36px Georgia, serif;
 }
 
 a,
 a:visited {
-    color: #A1CF14;
+    color: hsl(219, 62%, 50%);
     text-decoration: none;
 }
 
 h1,
 h2 {
     font-family: Helvetica, sans-serif;
-    font-weight: 400;
     margin: 0;
 }
 
 h1 {
     font-size: 36px;
     line-height: 36px;
-    color: #1F701F;
+    color: hsl(275, 28%, 50%);
     margin: 18px 0;
 }
 
@@ -57,29 +41,18 @@ p {
     margin: 0 0 18px;
 }
 
-small {
-    display: block;
-    font: 14px/18px sans-serif;
-    color: #888;
-    margin: 0 0 18px;
-}
-
 ul {
     padding: 0;
+    list-style: square;
 }
 
 ul ul {
     padding-left: 18px;
 }
 
-li {
-
-}
-
 li > p {
     margin: 0;
 }
-
 
 
 /*
@@ -95,12 +68,10 @@ li > p {
 }
 
 .wrapper {
-    overflow: hidden;
     min-height: 612px;
 }
 
-article {
-    overflow: hidden;
+.item {
     padding: 18px 18px 0;
     margin-bottom: 18px;
 }
@@ -116,7 +87,7 @@ article {
     left: 0;
     right: 0;
     z-index: 10000;
-    background: #1F701F;
+    background: hsl(275, 28%, 50%);
     height: 72px;
 }
 
@@ -128,11 +99,11 @@ article {
     left: 0;
     width: 50%;
     height: 72px;
-    background: #A1CF14;
+    background: hsl(275, 28%, 65%);
 }
 
 .brand-inner {
-    background: #1F701F;
+    background: hsl(275, 28%, 50%);
 }
 
 .logo {
@@ -156,6 +127,6 @@ article {
     padding: 0 18px;
     line-height: 2;
     font-weight: 700;
-    color: #eee;
+    color: #fff;
 }
 

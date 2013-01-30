@@ -21,37 +21,37 @@ layout: none
         </div>
     </header>
 
-    <section id="main" class="wrapper" role="main">
+    <div id="main" class="wrapper" role="main">
 
-        <article id="personal">
+        <section class="item" id="personal">
             {% capture personal %}
                 {% include cv/personal.md %}
             {% endcapture %}
             {{ personal | unindent | markdownify }}
-        </article>
+        </section>
 
-        <article id="experience">
+        <section class="item" id="experience">
             {% capture experience %}
                 {% include cv/experience.md %}
             {% endcapture %}
             {{ experience | unindent | markdownify }}
-        </article>
+        </section>
 
-        <article id="education">
+        <section class="item" id="education">
             {% capture education %}
                 {% include cv/education.md %}
             {% endcapture %}
             {{ education | unindent | markdownify }}
-        </article>
+        </section>
 
-        <article id="skills">
+        <section class="item" id="skills">
             {% capture skills %}
                 {% include cv/skills.md %}
             {% endcapture %}
             {{ skills | unindent | markdownify }}
-        </article>
+        </section>
 
-    </section>
+    </div>
 
 </body>
 </html>

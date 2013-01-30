@@ -1,5 +1,5 @@
 
-## Education
+# Education
 
 __St. Edwards Secondary School, Romford: 1997 - 2004__
 

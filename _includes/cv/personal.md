@@ -1,5 +1,5 @@
 
-# Personal Information
+# Dan Shearmur
 
 * Portfolio: [http://dan.shearmur.co.uk/portfolio](http://dan.shearmur.co.uk/portfolio)
 * Code: [https://github.com/danshearmur](https://github.com/danshearmur)

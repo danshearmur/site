@@ -11,7 +11,7 @@ body {
     margin: 72px 0 0;
     background: url(img/linedpaper.png) #fff;
     color: #000;
-    font: 14px/18px sans-serif;
+    font: 22px/36px Georgia, serif;
 }
 
 @media
@@ -36,35 +36,51 @@ a:visited {
 
 h1,
 h2 {
-    font-family: 'Noticia Text', serif;
+    font-family: Helvetica, sans-serif;
     font-weight: 400;
-    margin: 36px 18px 18px;
+    margin: 0;
 }
 
 h1 {
     font-size: 36px;
-    line-height: 1;
+    line-height: 36px;
     color: #1F701F;
+    margin: 18px 0;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 28px;
     line-height: 36px;
 }
 
-h1 + h2 {
-    margin-top: 0;
-}
-
 p {
-    margin: 18px;
+    margin: 0 0 18px;
 }
 
 small {
     display: block;
     font: 14px/18px sans-serif;
     color: #888;
+    margin: 0 0 18px;
 }
+
+ul {
+    padding: 0;
+}
+
+ul ul {
+    padding-left: 18px;
+}
+
+li {
+
+}
+
+li > p {
+    margin: 0;
+}
+
+
 
 /*
 # LAYOUT
@@ -81,6 +97,12 @@ small {
 .wrapper {
     overflow: hidden;
     min-height: 612px;
+}
+
+article {
+    overflow: hidden;
+    padding: 18px 18px 0;
+    margin-bottom: 18px;
 }
 
 /*

@@ -24,7 +24,7 @@ _June 2011 - Present_
 ## Front-end Developer at WeBuild
 _July 2008 - June 2011_
 
-* Worked through every stage of design and build process. From first client meetings to working closely with designers, and from specifying work for offshore .NET developers, to quality assurance on received work, whilst also providing client training and support
+* Worked through every stage of the design and build process. Holding first client meetings, working closely with designers, specifying work for offshore .NET developers, quality assurance on received work, whilst also providing client training and support
 * Introduced HTML5, CSS3, jQuery and SVN to the company
 * Front-end optimisations (image compression, CSS sprites, minified and concatenated CSS and JavaScript files, etc)
 * Produced some design work on small business and portfolio sites

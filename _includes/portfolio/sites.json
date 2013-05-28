@@ -2,6 +2,13 @@
     { "p": "Side projects and experiments" },
     {
         "site": {
+            "site_name": "Habits.io App",
+            "site_desc": "<p>Habits.io lets you easily record all your habits in one place: on your iPhone or iPad. Habits.io is an iPhone app built using <a href=\"http://angularjs.org/\" target=\"_blank\">AngularJS</a> and <a href=\"http://cordova.apache.org/\" target=\"_blank\">Apache Cordova</a>.</p><p><a href=\"https://github.com/danshearmur/habits.io\" target=\"_blank\">View source on github</a></p><p><a href=\"http://www.youtube.com/watch?v=6bCC2-X8ZuM\" target=\"_blank\">How-to video on youtube</a></p><p>Currently awaiting AppStore approval.</p>",
+            "site_link": "http://habits.io"
+        }
+    },
+    {
+        "site": {
             "site_name": "Pomodoro timer",
             "site_desc": "<p>Not your standard backbone TODO app. Uses a timer to break down periods of work into 25-minute intervals called 'Pomodori' and 5-minute breaks.</p><p><a href=\"https://github.com/danshearmur/pomodoro\" target=\"_blank\">View source on github</a></p>",
             "site_link": "http://pomodoro.demos.dan.shearmur.co.uk"
@@ -55,7 +62,7 @@
         "site": {
             "site_name": "My Curriculum Vitae",
             "site_desc": "<p>Really simple content first, almost flat design aesthetic</p>",
-            "site_link": "http://dan.shearmur.co.uk/cv/"
+            "site_link": "http://dan.shearmur.co.uk/cv"
         }
     },
     {

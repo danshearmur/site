@@ -28,28 +28,28 @@ layout: none
 
     <div id="main" class="wrapper" role="main">
 
-        <section class="item" id="personal">
+        <section class="item">
             {% capture personal %}
                 {% include cv/personal.md %}
             {% endcapture %}
             {{ personal | unindent | markdownify }}
         </section>
 
-        <section class="item" id="experience">
+        <section class="item">
             {% capture experience %}
                 {% include cv/experience.md %}
             {% endcapture %}
             {{ experience | unindent | markdownify }}
         </section>
 
-        <section class="item" id="education">
+        <section class="item">
             {% capture education %}
                 {% include cv/education.md %}
             {% endcapture %}
             {{ education | unindent | markdownify }}
         </section>
 
-        <section class="item" id="skills">
+        <section class="item">
             {% capture skills %}
                 {% include cv/skills.md %}
             {% endcapture %}

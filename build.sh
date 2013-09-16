@@ -17,4 +17,4 @@ done
 for script in $DESKTOP_SCRIPTS; do
   uglifyjs $JS_FOLDER$script.js >> $JS_FOLDER$DESKTOP
 done
-jekyll --no-auto
+jekyll serve -w

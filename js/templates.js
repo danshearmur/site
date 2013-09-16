@@ -123,200 +123,136 @@ var TPL = {};
  * @template delicious.jade
  */
 
-TPL['delicious.jade'] = function(locals, attrs, escape, rethrow) {
-var attrs = jade.attrs, escape = jade.escape, rethrow = jade.rethrow;
+TPL['delicious.jade'] = function(locals, attrs, escape, rethrow, merge) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
 var interp;
-buf.push('<div');
-buf.push(attrs({ 'id':('delicious-panel'), "class": ('panel') }));
-buf.push('><h2>delicious</h2>');
+buf.push('<div id="delicious-panel" class="panel"><h2>delicious</h2>');
 // iterate data
-(function(){
+;(function(){
   if ('number' == typeof data.length) {
+
     for (var $index = 0, $$l = data.length; $index < $$l; $index++) {
       var item = data[$index];
 
-buf.push('<div');
-buf.push(attrs({ "class": ('row') + ' ' + ('del') }));
-buf.push('><a');
-buf.push(attrs({ 'href':(item.u), 'target':("_blank"), "class": ('row-link') }));
+buf.push('<div class="row del"><a');
+buf.push(attrs({ 'href':(item.u), 'target':("_blank"), "class": ('row-link') }, {"href":true,"target":true}));
 buf.push('>');
 var __val__ = item.d
 buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</a><p');
-buf.push(attrs({ "class": ('del-notes') }));
-buf.push('>');
+buf.push('</a><p class="del-notes">');
 var __val__ = item.n
 buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</p><ul');
-buf.push(attrs({ "class": ('del-tags') }));
-buf.push('>');
+buf.push('</p><ul class="del-tags">');
 // iterate item.t
-(function(){
+;(function(){
   if ('number' == typeof item.t.length) {
+
     for (var $index = 0, $$l = item.t.length; $index < $$l; $index++) {
       var tag = item.t[$index];
 
 if ( tag != "")
 {
 buf.push('<li><a');
-buf.push(attrs({ 'href':("http://delicious.com/danshearmur/" + (tag) + ""), 'target':("_blank") }));
+buf.push(attrs({ 'href':("http://delicious.com/danshearmur/" + (tag) + ""), 'target':("_blank") }, {"href":true,"target":true}));
 buf.push('>');
 var __val__ = tag
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</a></li>');
 }
     }
+
   } else {
+    var $$l = 0;
     for (var $index in item.t) {
-      var tag = item.t[$index];
+      $$l++;      var tag = item.t[$index];
 
 if ( tag != "")
 {
 buf.push('<li><a');
-buf.push(attrs({ 'href':("http://delicious.com/danshearmur/" + (tag) + ""), 'target':("_blank") }));
+buf.push(attrs({ 'href':("http://delicious.com/danshearmur/" + (tag) + ""), 'target':("_blank") }, {"href":true,"target":true}));
 buf.push('>');
 var __val__ = tag
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</a></li>');
 }
-   }
+    }
+
   }
 }).call(this);
 
 buf.push('</ul>');
  var date = moment(item.dt)
 buf.push('<time');
-buf.push(attrs({ 'datetime':(date.format('YYYY-MM-DDTHH:MM:SSZ')), "class": ('del-time') }));
+buf.push(attrs({ 'datetime':(date.format('YYYY-MM-DDTHH:MM:SSZ')), "class": ('del-time') }, {"datetime":true}));
 buf.push('>');
 var __val__ = date.fromNow()
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</time></div>');
     }
-  } else {
-    for (var $index in data) {
-      var item = data[$index];
 
-buf.push('<div');
-buf.push(attrs({ "class": ('row') + ' ' + ('del') }));
-buf.push('><a');
-buf.push(attrs({ 'href':(item.u), 'target':("_blank"), "class": ('row-link') }));
+  } else {
+    var $$l = 0;
+    for (var $index in data) {
+      $$l++;      var item = data[$index];
+
+buf.push('<div class="row del"><a');
+buf.push(attrs({ 'href':(item.u), 'target':("_blank"), "class": ('row-link') }, {"href":true,"target":true}));
 buf.push('>');
 var __val__ = item.d
 buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</a><p');
-buf.push(attrs({ "class": ('del-notes') }));
-buf.push('>');
+buf.push('</a><p class="del-notes">');
 var __val__ = item.n
 buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</p><ul');
-buf.push(attrs({ "class": ('del-tags') }));
-buf.push('>');
+buf.push('</p><ul class="del-tags">');
 // iterate item.t
-(function(){
+;(function(){
   if ('number' == typeof item.t.length) {
+
     for (var $index = 0, $$l = item.t.length; $index < $$l; $index++) {
       var tag = item.t[$index];
 
 if ( tag != "")
 {
 buf.push('<li><a');
-buf.push(attrs({ 'href':("http://delicious.com/danshearmur/" + (tag) + ""), 'target':("_blank") }));
+buf.push(attrs({ 'href':("http://delicious.com/danshearmur/" + (tag) + ""), 'target':("_blank") }, {"href":true,"target":true}));
 buf.push('>');
 var __val__ = tag
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</a></li>');
 }
     }
+
   } else {
+    var $$l = 0;
     for (var $index in item.t) {
-      var tag = item.t[$index];
+      $$l++;      var tag = item.t[$index];
 
 if ( tag != "")
 {
 buf.push('<li><a');
-buf.push(attrs({ 'href':("http://delicious.com/danshearmur/" + (tag) + ""), 'target':("_blank") }));
+buf.push(attrs({ 'href':("http://delicious.com/danshearmur/" + (tag) + ""), 'target':("_blank") }, {"href":true,"target":true}));
 buf.push('>');
 var __val__ = tag
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</a></li>');
 }
-   }
+    }
+
   }
 }).call(this);
 
 buf.push('</ul>');
  var date = moment(item.dt)
 buf.push('<time');
-buf.push(attrs({ 'datetime':(date.format('YYYY-MM-DDTHH:MM:SSZ')), "class": ('del-time') }));
-buf.push('>');
-var __val__ = date.fromNow()
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</time></div>');
-   }
-  }
-}).call(this);
-
-buf.push('</div>');
-}
-return buf.join("");
-};
-
-/**
- * @template twitter.jade
- */
-
-TPL['twitter.jade'] = function(locals, attrs, escape, rethrow) {
-var attrs = jade.attrs, escape = jade.escape, rethrow = jade.rethrow;
-var buf = [];
-with (locals || {}) {
-var interp;
-buf.push('<div');
-buf.push(attrs({ 'id':('twitter-panel'), "class": ('panel') }));
-buf.push('><h2>twitter</h2>');
-// iterate data
-(function(){
-  if ('number' == typeof data.length) {
-    for (var $index = 0, $$l = data.length; $index < $$l; $index++) {
-      var item = data[$index];
-
-buf.push('<div');
-buf.push(attrs({ "class": ('row') + ' ' + ('tw') }));
-buf.push('><p');
-buf.push(attrs({ "class": ('tweet') }));
-buf.push('>');
-var __val__ = twttr.txt.autoLink(item.text)
-buf.push(null == __val__ ? "" : __val__);
-buf.push('</p>');
- var date = moment(item.created_at, 'ddd MMM DD hh:mm:ss Z YYYY')
-buf.push('<time');
-buf.push(attrs({ 'datetime':(date.format('YYYY-MM-DDTHH:MM:SSZ')), "class": ('tw-time') }));
+buf.push(attrs({ 'datetime':(date.format('YYYY-MM-DDTHH:MM:SSZ')), "class": ('del-time') }, {"datetime":true}));
 buf.push('>');
 var __val__ = date.fromNow()
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</time></div>');
     }
-  } else {
-    for (var $index in data) {
-      var item = data[$index];
 
-buf.push('<div');
-buf.push(attrs({ "class": ('row') + ' ' + ('tw') }));
-buf.push('><p');
-buf.push(attrs({ "class": ('tweet') }));
-buf.push('>');
-var __val__ = twttr.txt.autoLink(item.text)
-buf.push(null == __val__ ? "" : __val__);
-buf.push('</p>');
- var date = moment(item.created_at, 'ddd MMM DD hh:mm:ss Z YYYY')
-buf.push('<time');
-buf.push(attrs({ 'datetime':(date.format('YYYY-MM-DDTHH:MM:SSZ')), "class": ('tw-time') }));
-buf.push('>');
-var __val__ = date.fromNow()
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</time></div>');
-   }
   }
 }).call(this);
 

@@ -35,8 +35,7 @@
   }
 
   function appendHtml(el, html) {
-    var curr = el.innerHTML
-    el.innerHTML = curr + html;
+    el.innerHTML += + html;
   }
 
   function render() {
@@ -50,10 +49,6 @@
 
   getJsonp('//feeds.delicious.com/v2/json/danshearmur?count=5', function () {
     render('delicious', arguments[0]);
-  });
-
-  getJsonp('//api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=danshearmur&count=5', function () {
-    render('twitter', arguments[0]);
   });
 
 })();

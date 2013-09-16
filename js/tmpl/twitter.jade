@@ -1,7 +1,0 @@
-#twitter-panel.panel
-  h2 twitter
-  each item in data
-    .row.tw
-      p.tweet!= twttr.txt.autoLink(item.text)
-      - var date = moment(item.created_at, 'ddd MMM DD hh:mm:ss Z YYYY')
-      time.tw-time( datetime=date.format('YYYY-MM-DDTHH:MM:SSZ') )= date.fromNow()

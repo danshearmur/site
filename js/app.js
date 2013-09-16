@@ -40,7 +40,7 @@
   svgs = [];
 
   // Set the class on the body, and update every 2.5 minutes
-  (function () {
+  function loop() {
 
     var load_time, interval, time_class, transition_class;
 
@@ -58,9 +58,10 @@
       }, 1);
     }
 
-    setTimeout(arguments.callee, 2.5 * 60 * 1000);
+    setTimeout(loop, 2.5 * 60 * 1000);
 
-  }) ();
+  }
+  loop();
 
   // <div id="gid-1993718" class="gist-insert"></div>
   document.write = function (str) {

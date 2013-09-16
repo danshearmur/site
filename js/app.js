@@ -18,16 +18,16 @@
     return document.getElementsByTagName(el)[0];
   }
 
-  function getDivsByClass(class) {
+  function getDivsByClass(className) {
     var divs, classes, i, div;
     if (document.querySelectorAll) {
-      return document.querySelectorAll('div.' + class);
+      return document.querySelectorAll('div.' + className);
     }
     divs = document.getElementsByTagNmae('div');
     classes = [];
     for (i = 0; i < divs.length; i++) {
       div = divs[i];
-      if (div.className.indexOf(class) != -1) {
+      if (div.className.indexOf(className) != -1) {
         classes.push(div);
       }
     }

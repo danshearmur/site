@@ -35,7 +35,7 @@
   }
 
   function appendHtml(el, html) {
-    el.innerHTML += + html;
+    el.innerHTML += html;
   }
 
   function render() {

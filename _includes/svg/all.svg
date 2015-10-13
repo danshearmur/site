@@ -1,0 +1,6 @@
+<svg style="display: none;">
+{% include svg/logo.svg %}
+{% include svg/pinboard.svg %}
+{% include svg/twitter.svg %}
+{% include svg/github.svg %}
+</svg>

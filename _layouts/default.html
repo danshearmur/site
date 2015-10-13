@@ -4,30 +4,37 @@
     <meta charset=utf-8>
     <title>{{ page.title }} - djs</title>
     <meta name=viewport content="initial-scale=1, maximum-scale=1">
-    <meta nane=author content="dan shearmur dan@shearmur.co.uk">
     <link rel=alternate href=/atom.xml type=application/atom+xml title="dan.shearmur.co.uk ATOM Feed">
-    <link rel=stylesheet href=/css/dan.less.min.css>
-    <link rel=stylesheet href=//fonts.googleapis.com/css?family=Droid+Sans:700>
-    <script>var i=0,e='header article time aside'.split(' ');for(;i<e.length;i++){document.createElement(e[i]);}</script>
+    <style>
+{% include css/dan.css %}
+    </style>
   </head>
   <body>
+{% include svg/all.svg %}
     <header>
-      <a href=/ id=djs class=butt>
-        <span>djs</span>
+      <a href=/ class=butt>
+        <svg viewBox="0 0 24 21">
+          <use xlink:href="#logo-djs" />
+        </svg>
       </a>
-      <a href=https://delicious.com/danshearmur id=delicious class=butt target=_blank>
-        <span>Delicious</span>
+      <a href=https://pinboard.in/u:d_j_s class=butt target=_blank>
+        <svg >
+          <use xlink:href="#logo-pinboard" />
+        </svg>
       </a>
-      <a href=https://twitter.com/danshearmur id=twitter class=butt target=_blank>
-        <span>Twiiter</span>
+      <a href=https://twitter.com/danshearmur class=butt target=_blank>
+        <svg viewBox="0 0 26 16">
+          <use xlink:href="#logo-twitter" />
+        </svg>
       </a>
-      <a href=https://github.com/danshearmur id=github class=butt target=_blank>
-        <span>GitHub</span>
+      <a href=https://github.com/danshearmur class=butt target=_blank>
+        <svg viewBox="0 0 24 24">
+          <use xlink:href="#logo-github" />
+        </svg>
       </a>
     </header>
-    <div id=wrapper>
+    <main>
       {{ content }}
-    </div>
-    <script src=/js/base.js></script>
+    </main>
   </body>
 </html>
